@@ -1,18 +1,20 @@
 <experiment-1>
 
-    <aim> </aim>
+    <aim>To find the downward force, along an inclined plane, acting on a roller
+due to gravity and study its relationship with the angle of inclination
+by plotting graph between force and sin θ</aim>
 
-    <num> </num>
+    <num>5</num>
     <steps>
-        <step></step>
+        <step>Finding out g</step>
 
-        <step></step>
+        <step>Tension in pulley</step>
 
-        <step></step>
+        <step>ATwood machine</step>
 
-        <step></step>
+        <step>Moving wedge</step>
 
-        <step></step>
+        <step>Free fall</step>
 
     </steps>
 

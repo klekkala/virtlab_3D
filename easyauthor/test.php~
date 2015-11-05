@@ -34,13 +34,13 @@ echo $tr->translate($text);
         <div class="page-header">
 
 
-<?php$lang = 'ta'?>            <h1><?php translate('3D Physics virtual lab', $lang) ?> </h1>
-	<h5> <?php translate('You can design your experiments. Input the given details and generate your lab', $lang) ?></h2>
+<?php$lang = ta?>            <h1><?php translate('Design your own EasyAuthor', $lang) ?> </h1>
+	<h2> <?php translate('You can design your own easyauthor. Input the given details and generate your app', $lang) ?></h2>
         </div>
         <form id="commentForm" method="get" action="" class="form-horizontal">
             <div id="rootwizard">
                 <ul>    
-<li><a href='#tab0' data-toggle='tab'>Finding out g</a></li><li><a href='#tab1' data-toggle='tab'>Tension in pulley</a></li><li><a href='#tab2' data-toggle='tab'>ATwood machine</a></li><li><a href='#tab3' data-toggle='tab'>Moving wedge</a></li><li><a href='#tab4' data-toggle='tab'>Free fall</a></li>            
+<li><a href='#tab1' data-toggle='tab'>word</a></li><li><a href='#tab2' data-toggle='tab'>word</a></li><li><a href='#tab3' data-toggle='tab'>word</a></li><li><a href='#tab4' data-toggle='tab'>word</a></li><li><a href='#tab5' data-toggle='tab'>word</a></li>            
 
 
 </ul>

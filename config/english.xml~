@@ -2,31 +2,37 @@
 
     <aim> </aim>
 
-    <num> </num>
+    <num>5</num>
     <steps>
-        <step></step>
+        <step>Finding out g</step>
 
-        <step></step>
+        <step>Tension in pulley</step>
 
-        <step></step>
+        <step>ATwood machine</step>
 
-        <step></step>
+        <step>Moving wedge</step>
 
-        <step></step>
+        <step>Free fall</step>
 
     </steps>
 
     <apparatus>
         <block></block>
+
         <wedge></wedge>
+
         <thread></thread>
+
         <pulley></pulley>
     </apparatus>
 
     <animations>
         <drag></drag>
+
         <fall></fall>
+
         <snap></snap>
+
         <roll></roll>
     </animations>
 

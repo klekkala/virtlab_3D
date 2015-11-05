@@ -41,7 +41,7 @@ class XmlElement {
 //$tabs is the array which consists of the names and appending it for every name attribute//
 function xml_to_object($xml, $val) {
 
-    $lang = 'ta';
+
     $tabs = array();
     $data =  array ();
     $type = array();
@@ -64,14 +64,13 @@ function xml_to_object($xml, $val) {
         if ($tag['type'] == "complete" || $tag['type'] == "open") {
             $elements[$index] = new XmlElement;
 
-            if($tag['level'] >= 3){
+           
 
-                if($tag['tag']=='desc'){
+                if($tag['tag']=='step'){
                     array_push($tabs,$tag['value']);
-                    array_push($count,$i);
-                    $i = 0;
+                    
                 }
-                else if($tag['tag'] == 'type'){
+                else if($tag['tag'] == 'aim'){
                     array_push($type,$tag['value']);
 
                 }
@@ -83,11 +82,8 @@ function xml_to_object($xml, $val) {
                     $i++;
                 }
 
-            }
-
-            else if($tag['tag']=='num' && $tag['level']==2){
-                $count[0] = $tag['value'];
-            }
+    
+           
             $elements[$index]->name = $tag['tag'];
             $elements[$index]->attributes = $tag['attributes'];
             $elements[$index]->content = $tag['value'];
@@ -111,27 +107,32 @@ function xml_to_object($xml, $val) {
 //file pointers initialized and pointed
 
 $wfile = fopen("/var/www/html/easyauthor/test.php", "w") or die("Unable to open file!");
-$rfile = fopen("/var/www/html/config/telugu.xml", "r") or die("Unable to open file!");
+$rfile = fopen("/var/www/html/config/english.xml", "r") or die("Unable to open file!");
+
 $rfile1 = fopen("/var/www/html/src/stitch-1.txt", "r") or die("Unable to open file!");
+$rfile2 = fopen("/var/www/html/src/stitch-2.txt", "r") or die("Unable to open file!");
 $rfile3 = fopen("/var/www/html/src/stitch-3.txt", "r") or die("Unable to open file!");
+$rfile4 = fopen("/var/www/html/src/stitch-4.txt", "r") or die("Unable to open file!");
 $rfile5 = fopen("/var/www/html/src/stitch-5.txt", "r") or die("Unable to open file!");
 
 
 //file pointers reading or writing
-$xml = fread($rfile,filesize("/var/www/html/config/telugu.xml"));
+$xml = fread($rfile,filesize("/var/www/html/config/english.xml"));
 $txt1 = fread($rfile1,filesize("/var/www/html/src/stitch-1.txt"));
+$txt2 = fread($rfile2,filesize("/var/www/html/src/stitch-2.txt"));
 $txt3 = fread($rfile3,filesize("/var/www/html/src/stitch-3.txt"));
+$txt4 = fread($rfile4,filesize("/var/www/html/src/stitch-4.txt"));
 $txt5 = fread($rfile5,filesize("/var/www/html/src/stitch-5.txt"));
 
 //$val is the variable which consists of the attribute in the xml file. You get the data which is enclosed in the attribute
-$val = 'name';
-
+$val = "name";
+$lang = "ta";
 //$output is the array which consists of the text fields which is obtained from the xml schema file
 list($type, $data, $count, $tabs) = xml_to_object($xml, $val);
 
 
 //$number is the number of pages which will be present in the easyauthor framework wizard
-$number = $count[0];
+$number = 5;
 
 //*********************************Generating process starts*******************************//
 
@@ -140,40 +141,23 @@ fwrite($wfile, $txt1);
 
 //Specifing the language
 
-$txt = "$" + "lang = $lang";
+$txt = "<?php" . "$"."lang = ". "'$lang'"."?>";
 fwrite($wfile, $txt);
 
+
+fwrite($wfile, $txt2);
+
 //Tab generating,initializing and naming
-for ($x = 1; $x <= $number; $x++) {
+for ($x = 0; $x < $number; $x++) {
     $word = $tabs[$x];
-    $txt2 = "<li><a href='#tab$x' data-toggle='tab'>$word</a></li>";
-    fwrite($wfile, $txt2);
+    $txt = "<li><a href='#tab$x' data-toggle='tab'>$word</a></li>";
+    fwrite($wfile, $txt);
 }
 
 fwrite($wfile, $txt3);
 
 
-//Page content generating
-for ($x = 1; $x <= $number; $x++) {
-    $txt4 =  "<div class='tab-pane' id='tab$x'>";
-    fwrite($wfile, $txt4);
-
-    for($y = 0; $y <= $count[$x]; $y++){
-	
-	$temp = $type[$x];
-        $txt4 = "<div class='control-group'>
-            <label class='control-label' for=$type[$x]>$data[$x]</label>
-            <div class='controls'>
-            $map[$temp]
-            </div>
-            </div>";
-
-        fwrite($wfile, $txt4);
-    }
-    $txt4 = "</div>";
-    fwrite($wfile, $txt4);
-}
-
+fwrite($wfile, $txt4);
 
 fwrite($wfile, $txt5);
 
