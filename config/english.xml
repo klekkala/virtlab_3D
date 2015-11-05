@@ -1,0 +1,40 @@
+<experiment-1>
+
+    <aim> </aim>
+
+    <num> </num>
+    <steps>
+        <step></step>
+
+        <step></step>
+
+        <step></step>
+
+        <step></step>
+
+        <step></step>
+
+    </steps>
+
+    <apparatus>
+        <block></block>
+
+        <wedge></wedge>
+
+        <thread></thread>
+
+        <pulley></pulley>
+    </apparatus>
+
+    <animations>
+        <drag></drag>
+
+        <fall></fall>
+
+        <snap></snap>
+
+        <roll></roll>
+    </animations>
+
+
+</experiment-1>

@@ -153,6 +153,7 @@ fwrite($wfile, $txt1);
 
 $txt = "$" + "lang = $lang";
 fwrite($wfile, $txt);
+
 //Tab generating,initializing and naming
 for ($x = 1; $x <= $number; $x++) {
     $word = $tabs[$x];

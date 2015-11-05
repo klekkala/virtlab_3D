@@ -8,17 +8,6 @@
 
 <?php
 
-$map = array();
-
-$map = array(
-    "image" => "<input type='text' name='fname'>",
-    "button" => "<input type='button' value='Click me' onclick='msg()'>",
-    "email" => "<input type='text' name='fname'>",
-    "file" => "<input type='text' name='fname'>",
-    "dropdown" => "<input type='text' name='fname'>",
-    "time" => "<input type='text' name='fname'>",
-    "text" => "<input type='text' name='fname'>"
-);
 
 require '/home/kiran/vendor/autoload.php';
 
