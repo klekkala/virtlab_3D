@@ -148,7 +148,9 @@ fwrite($wfile, $txt);
 fwrite($wfile, $txt2);
 
 //Tab generating,initializing and naming
-for ($x = 0; $x < $number; $x++) {
+
+//Note: $x starts from 1 because numbering for the tabs starts from 1
+for ($x = 1; $x <= $number; $x++) {
     $word = $tabs[$x];
     $txt = "<li><a href='#tab$x' data-toggle='tab'>$word</a></li>";
     fwrite($wfile, $txt);
@@ -157,7 +159,9 @@ for ($x = 0; $x < $number; $x++) {
 fwrite($wfile, $txt3);
 
 
+for ($x = 1; $x <= $number; $x++){
 fwrite($wfile, $txt4);
+}
 
 fwrite($wfile, $txt5);
 

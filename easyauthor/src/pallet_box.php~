@@ -305,10 +305,8 @@
             
             <!-- Target -->
             <div id="formVisualizer" class="col-lg-6 col-sm-12">
-              <h2>Your Form</h2>
               <hr></hr>
               <form class="form-horizontal area">
-                <legend class="">New Form</legend>
                 <div id="target" class="connectedSortable">
 <section id="wizard">
         <div class="page-header">
