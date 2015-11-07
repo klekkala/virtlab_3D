@@ -23,6 +23,7 @@ function translate($text, $lang){
     echo $tr->translate($text);
 }
 
+   
 
 ?>
 
@@ -86,7 +87,10 @@ function translate($text, $lang){
     </div>
 </div>
                               </div>
-                        </div>
+
+<input type="submit" class="button" name="insert" value="insert" />
+
+                    </div>
 
 
 
@@ -345,6 +349,23 @@ $(document).ready(function(){
         <script src="../bootstrap/js/bootstrap.min.js"></script>
         <script src="../jquery.bootstrap.wizard.js"></script>
         <script src="../prettify.js"></script>
+
+
+<script>
+$(document).ready(function(){
+    $('.button').click(function(){
+        var clickBtnValue = $(this).val();
+        var ajaxurl = 'ajax.php',
+        data =  {'action': clickBtnValue};
+        $.post(ajaxurl, data, function (response) {
+            // Response div goes here.
+            alert("action performed successfully");
+        });
+    });
+
+});
+</script>
+
 
 <script>
 $(document).ready(function() {
