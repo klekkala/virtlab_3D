@@ -6,7 +6,8 @@
 <!-- Bootstrap -->
 <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="../prettify.css" rel="stylesheet">
-
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="devheart-examples.css" media="screen" />
 <?php
 
 require '/home/kiran/vendor/autoload.php';
@@ -15,11 +16,11 @@ use Stichoza\GoogleTranslate\TranslateClient;
 function translate($text, $lang){
 
 
-$tr = new TranslateClient(); // Default is from 'auto' to 'en'
-$tr->setSource('en'); // Translate from English
-$tr->setTarget($lang); // Translate to Georgian
+    $tr = new TranslateClient(); // Default is from 'auto' to 'en'
+    $tr->setSource('en'); // Translate from English
+    $tr->setTarget($lang); // Translate to Georgian
 
-echo $tr->translate($text);
+    echo $tr->translate($text);
 }
 
 
@@ -35,12 +36,12 @@ echo $tr->translate($text);
 
 
 <?php$lang = 'ta'?>            <h1><?php translate('3D Physics virtual lab', $lang) ?> </h1>
-	<h5> <?php translate('You can design your experiments. Input the given details and generate your lab', $lang) ?></h2>
+    <h5> <?php translate('You can design your experiments. Input the given details and generate your lab', $lang) ?></h2>
         </div>
         <form id="commentForm" method="get" action="" class="form-horizontal">
             <div id="rootwizard">
-                <ul>    
-<li><a href='#tab1' data-toggle='tab'>Tension in pulley</a></li><li><a href='#tab2' data-toggle='tab'>ATwood machine</a></li><li><a href='#tab3' data-toggle='tab'>Moving wedge</a></li><li><a href='#tab4' data-toggle='tab'>Free fall</a></li><li><a href='#tab5' data-toggle='tab'></a></li>            
+                <ul>
+<li><a href='#tab1' data-toggle='tab'>Tension in pulley</a></li><li><a href='#tab2' data-toggle='tab'>ATwood machine</a></li><li><a href='#tab3' data-toggle='tab'>Moving wedge</a></li><li><a href='#tab4' data-toggle='tab'>Free fall</a></li><li><a href='#tab5' data-toggle='tab'> Pusing blocks</a></li>
 
 
 </ul>
@@ -86,7 +87,74 @@ echo $tr->translate($text);
 </div>
                               </div>
                         </div>
-           
+
+
+
+<div class="tab-pane" id="tab1">
+
+ <div class="control-group">
+                                <label class="control-label" for="name">hello</label>
+                                <div class="controls">
+                                 <div id="example-1-2">
+
+                <div class="column left first">
+
+                    <ul class="sortable-list">
+                        <li class="sortable-item">Sortable item A</li>
+                        <li class="sortable-item">Sortable item B</li>
+                    </ul>
+
+                </div>
+
+                <div class="column left">
+
+                    <ul class="sortable-list">
+                        <li class="sortable-item">Sortable item C</li>
+                        <li class="sortable-item">Sortable item D</li>
+                    </ul>
+
+                </div>
+
+
+
+                <div class="clearer">&nbsp;</div>
+
+            </div>
+                                </div>
+                              </div>
+
+                              <div class="control-group">
+                                <label class="control-label" for="name">step</label>
+                                <div class="controls">
+                                  <input type="text" id="namefield" name="namefield" class="required">
+                                </div>
+                              </div>
+
+                              <div class="control-group">
+                                <label class="control-label" for="name">actions</label>
+                                <div class="controls">
+                                  <input type="text" id="namefield" name="namefield" class="required">
+                                </div>
+                              </div>
+
+                              <div class="control-group">
+                                <label class="control-label" for="name">outcomes</label>
+                                <div class="controls">
+                                  <input type="text" id="namefield" name="namefield" class="required">
+                                </div>
+                              </div>
+
+                               <div class="control-group">
+                                <label class="control-label" for="name">constraints</label>
+                               <div class="field_wrapper">
+    <div>
+        <input type="text" name="field_name[]" value=""/>
+        <a href="javascript:void(0);" class="add_button" title="Add field"><img src="plus.png"/></a>
+    </div>
+</div>
+                              </div>
+                        </div>
+
 
 
 <div class="tab-pane" id="tab1">
@@ -121,42 +189,7 @@ echo $tr->translate($text);
 </div>
                               </div>
                         </div>
-           
 
-
-<div class="tab-pane" id="tab1">
-                              <div class="control-group">
-                                <label class="control-label" for="name">step</label>
-                                <div class="controls">
-                                  <input type="text" id="namefield" name="namefield" class="required">
-                                </div>
-                              </div>
-
-                              <div class="control-group">
-                                <label class="control-label" for="name">actions</label>
-                                <div class="controls">
-                                  <input type="text" id="namefield" name="namefield" class="required">
-                                </div>
-                              </div>
-
-                              <div class="control-group">
-                                <label class="control-label" for="name">outcomes</label>
-                                <div class="controls">
-                                  <input type="text" id="namefield" name="namefield" class="required">
-                                </div>
-                              </div>
-
-                               <div class="control-group">
-                                <label class="control-label" for="name">constraints</label>
-                               <div class="field_wrapper">
-    <div>
-        <input type="text" name="field_name[]" value=""/>
-        <a href="javascript:void(0);" class="add_button" title="Add field"><img src="plus.png"/></a>
-    </div>
-</div>
-                              </div>
-                        </div>
-           
 
 
 <div class="tab-pane" id="tab1">
@@ -191,7 +224,7 @@ echo $tr->translate($text);
 </div>
                               </div>
                         </div>
-           
+
 
 
 <div class="tab-pane" id="tab1">
@@ -226,7 +259,7 @@ echo $tr->translate($text);
 </div>
                               </div>
                         </div>
-           
+
 
 
 </div>
@@ -254,14 +287,45 @@ echo $tr->translate($text);
 </section>
 </div>
 
+<!-- Example JavaScript files -->
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="jquery-ui-1.8.custom.min.js"></script>
 
+<!-- Example jQuery code (JavaScript)  -->
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+    // Example 1.1: A single sortable list
+    $('#example-1-1 .sortable-list').sortable();
+
+    // Example 1.2: Sortable and connectable lists
+    $('#example-1-2 .sortable-list').sortable({
+        connectWith: '#example-1-2 .sortable-list'
+    });
+
+    // Example 1.3: Sortable and connectable lists with visual helper
+    $('#example-1-3 .sortable-list').sortable({
+        connectWith: '#example-1-3 .sortable-list',
+            placeholder: 'placeholder',
+    });
+
+    // Example 1.4: Sortable and connectable lists (within containment)
+    $('#example-1-4 .sortable-list').sortable({
+        connectWith: '#example-1-4 .sortable-list',
+            containment: '#containment'
+    });
+
+});
+
+</script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
     var maxField = 10; //Input fields increment limitation
     var addButton = $('.add_button'); //Add button selector
     var wrapper = $('.field_wrapper'); //Input field wrapper
-    var fieldHTML = '<div><input type="text" name="field_name[]" value=""/><a href="javascript:void(0);" class="remove_button" title="Remove field"><img src="remove-icon.png"/></a></div>'; //New input field html
+    var fieldHTML = '<div><input type="text" name="field_name[]" value=""/><a href="javascript:void(0);" class="remove_button" title="Remove field"><img src="minus.png"/></a></div>'; //New input field html
     var x = 1; //Initial field counter is 1
     $(addButton).click(function(){ //Once add button is clicked
         if(x < maxField){ //Check maximum number of input fields
