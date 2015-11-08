@@ -1,6 +1,7 @@
 <?php
 if(isset($_REQUEST['insert'])){
 
+echo 'You entered: ', htmlspecialchars($_POST['something']);
 $servername = "localhost";
 $username = "root";
 $password = "qwertyuiop";
@@ -25,7 +26,7 @@ if (!$conn) {
 	$step = 1;
 	$sql = "INSERT INTO step(name,description,action,outcome) VALUES('$name','$desc','$action','$outcome')";
 if (mysqli_query($conn, $sql)) {
-    echo "New record created successfully";
+    
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
@@ -35,7 +36,7 @@ if (mysqli_query($conn, $sql)) {
 		
 		$sql = "INSERT INTO constrain(sid,cons) VALUES($step,'$value')";
 if (mysqli_query($conn, $sql)) {
-    echo "New record created successfully";
+    
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
@@ -44,7 +45,6 @@ if (mysqli_query($conn, $sql)) {
 mysqli_close($conn);
 }
 ?>
-
 
 <!DOCTYPE html>
 <html>
