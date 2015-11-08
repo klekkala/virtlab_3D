@@ -1,3 +1,54 @@
+<?php
+if(isset($_REQUEST['insert'])){
+
+$servername = "localhost";
+$username = "root";
+$password = "qwertyuiop";
+$dbname = "virtual";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+
+
+	$field_values_array = $_REQUEST['field_name'];
+	$name = $_REQUEST['stepfield'];
+	$desc = $_REQUEST['descfield'];
+	$outcome = $_REQUEST['outcomefield'];
+	$action = $_REQUEST['actionfield'];
+	
+	
+	$step = 1;
+	$sql = "INSERT INTO step(name,description,action,outcome) VALUES('$name','$desc','$action','$outcome')";
+if (mysqli_query($conn, $sql)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+
+	foreach($field_values_array as $value){
+		
+		$sql = "INSERT INTO constrain(sid,cons) VALUES($step,'$value')";
+if (mysqli_query($conn, $sql)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+}
+
+
+
+mysqli_close($conn);
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,22 +60,15 @@
 <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="devheart-examples.css" media="screen" />
 <?php
-
 require '/home/kiran/vendor/autoload.php';
-
 use Stichoza\GoogleTranslate\TranslateClient;
 function translate($text, $lang){
-
-
     $tr = new TranslateClient(); // Default is from 'auto' to 'en'
     $tr->setSource('en'); // Translate from English
     $tr->setTarget($lang); // Translate to Georgian
-
     echo $tr->translate($text);
 }
-
    
-
 ?>
 
 
@@ -58,28 +102,34 @@ function translate($text, $lang){
 
 <div class="tab-pane" id="tab1">
                               <div class="control-group">
-                                <label class="control-label" for="name">step</label>
+                                <label class="control-label" for="step">step</label>
                                 <div class="controls">
-                                  <input type="text" id="namefield" name="namefield" class="required">
+                                  <input type="text" id="namefield" name="stepfield" class="required">
+                                </div>
+                              </div>
+			       <div class="control-group">
+                                <label class="control-label" for="desc">description</label>
+                                <div class="controls">
+                                  <input type="text" id="namefield" name="descfield" class="required">
                                 </div>
                               </div>
 
                               <div class="control-group">
-                                <label class="control-label" for="name">actions</label>
+                                <label class="control-label" for="actions">actions</label>
                                 <div class="controls">
-                                  <input type="text" id="namefield" name="namefield" class="required">
+                                  <input type="text" id="namefield" name="actionfield" class="required">
                                 </div>
                               </div>
 
                               <div class="control-group">
-                                <label class="control-label" for="name">outcomes</label>
+                                <label class="control-label" for="outcomes">outcomes</label>
                                 <div class="controls">
-                                  <input type="text" id="namefield" name="namefield" class="required">
+                                  <input type="text" id="namefield" name="outcomefield" class="required">
                                 </div>
                               </div>
 
                                <div class="control-group">
-                                <label class="control-label" for="name">constraints</label>
+                                <label class="control-label" for="constraints">constraints</label>
                                <div class="field_wrapper">
     <div>
         <input type="text" name="field_name[]" value=""/>
@@ -296,164 +346,35 @@ function translate($text, $lang){
 <script type="text/javascript" src="jquery-ui-1.8.custom.min.js"></script>
 
 <!-- Example jQuery code (JavaScript)  -->
-<script type="text/javascript">
-
-$(document).ready(function(){
-
-    // Example 1.1: A single sortable list
-    $('#example-1-1 .sortable-list').sortable();
-
-    // Example 1.2: Sortable and connectable lists
-    $('#example-1-2 .sortable-list').sortable({
-        connectWith: '#example-1-2 .sortable-list'
-    });
-
-    // Example 1.3: Sortable and connectable lists with visual helper
-    $('#example-1-3 .sortable-list').sortable({
-        connectWith: '#example-1-3 .sortable-list',
-            placeholder: 'placeholder',
-    });
-
-    // Example 1.4: Sortable and connectable lists (within containment)
-    $('#example-1-4 .sortable-list').sortable({
-        connectWith: '#example-1-4 .sortable-list',
-            containment: '#containment'
-    });
-
-});
-
-</script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-    var maxField = 10; //Input fields increment limitation
-    var addButton = $('.add_button'); //Add button selector
-    var wrapper = $('.field_wrapper'); //Input field wrapper
-    var fieldHTML = '<div><input type="text" name="field_name[]" value=""/><a href="javascript:void(0);" class="remove_button" title="Remove field"><img src="minus.png"/></a></div>'; //New input field html
-    var x = 1; //Initial field counter is 1
-    $(addButton).click(function(){ //Once add button is clicked
-        if(x < maxField){ //Check maximum number of input fields
-            x++; //Increment field counter
-            $(wrapper).append(fieldHTML); // Add field html
-        }
-    });
-    $(wrapper).on('click', '.remove_button', function(e){ //Once remove button is clicked
-        e.preventDefault();
-        $(this).parent('div').remove(); //Remove field html
-        x--; //Decrement field counter
-    });
-});
-</script>
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
-        <script src="../bootstrap/js/bootstrap.min.js"></script>
-        <script src="../jquery.bootstrap.wizard.js"></script>
-        <script src="../prettify.js"></script>
+<script type="text/javascript" src="drag_drop.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="add_field.js"></script>
+<!--*****************************************************************************************************************************************-->
+<!--*****************************************************************************************************************************************-->
+<!--*****************************************************************************************************************************************-->
 
 
-<script>
-$(document).ready(function(){
-    $('.button').click(function(){
-        var clickBtnValue = $(this).val();
-        var ajaxurl = 'ajax.php',
-        data =  {'action': clickBtnValue};
-        $.post(ajaxurl, data, function (response) {
-            // Response div goes here.
-            alert("action performed successfully");
-        });
-    });
-
-});
-</script>
 
 
-<script>
-$(document).ready(function() {
 
-    $('#rootwizard').bootstrapWizard({onTabShow: function(tab, navigation, index) {
-        var $total = navigation.find('li').length;
-        var $current = index+1;
-        var $percent = ($current/$total) * 100;
-        $('#rootwizard .progress-bar').css({width:$percent+'%'});
-            }});
+<!--*****************************************************************************************************************************************-->
+<!--*****************************************************************************************************************************************-->
+<!--*****************************************************************************************************************************************-->
 
-        $('#pills').bootstrapWizard({'tabClass': 'nav nav-pills', 'debug': false, onShow: function(tab, navigation, index) {
-            console.log('onShow');
-            }, onNext: function(tab, navigation, index) {
-                console.log('onNext');
-            }, onPrevious: function(tab, navigation, index) {
-                console.log('onPrevious');
-            }, onLast: function(tab, navigation, index) {
-                console.log('onLast');
-            }, onTabClick: function(tab, navigation, index) {
-                console.log('onTabClick');
-                alert('on tab click disabled');
-            }, onTabShow: function(tab, navigation, index) {
-                console.log('onTabShow');
-                var $total = navigation.find('li').length;
-                var $current = index+1;
-                var $percent = ($current/$total) * 100;
-                $('#pills .progress-bar').css({width:$percent+'%'});
-            }});
-        $('#rootwizard').bootstrapWizard({'tabClass': 'nav nav-pills'});
 
-        // Disable step
-        $('#disable-step').on('click', function() {
-            $('#rootwizard').bootstrapWizard('disable', $('#stepid').val());
-                });
+<!--***********Script for the wizard options and the animations. Consists of the functions declared in the above html body****************-->
+<!--*****************************************************************************************************************************************-->
+<!--*****************************************************************************************************************************************-->
+<!--*****************************************************************************************************************************************-->
 
-        // Enable step
-        $('#enable-step').on('click', function() {
-            $('#rootwizard').bootstrapWizard('enable', $('#stepid').val());
-                });
-
-        // Remove step
-        $('#remove-step').on('click', function() {
-            $('#rootwizard').bootstrapWizard('remove', $('#stepid').val(), true);
-                });
-
-        // Show step
-        $('#show-step').on('click', function() {
-            $('#rootwizard').bootstrapWizard('display', $('#stepid').val());
-                });
-
-        // Hide step
-        $('#hide-step').on('click', function() {
-            $('#rootwizard').bootstrapWizard('hide', $('#stepid').val());
-                });
-
-        var $validator = $("#commentForm").validate({
-            rules: {
-                emailfield: {
-                    required: true,
-                        email: true,
-                        minlength: 3
-},
-namefield: {
-    required: true,
-        minlength: 3
-},
-urlfield: {
-    required: true,
-        minlength: 3,
-        url: true
-}
-}
-
-});
-
-$('#rootwizard').bootstrapWizard({
-    'tabClass': 'nav nav-pills',
-        'onNext': function(tab, navigation, index) {
-            var $valid = $("#commentForm").valid();
-            if(!$valid) {
-                $validator.focusInvalid();
-                return false;
-        }
-        }
-        });
-window.prettyPrint && prettyPrint()
-    });
-        </script>
+ <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+  <script src="../bootstrap/js/bootstrap.min.js"></script>
+  <script src="../jquery.bootstrap.wizard.js"></script>
+<script src="../prettify.js"></script>
+<script src="wizard.js"></script>
+<!--*****************************************************************************************************************************************-->
+<!--*****************************************************************************************************************************************-->
+<!--*****************************************************************************************************************************************-->
         </body>
         </html>

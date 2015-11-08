@@ -42,8 +42,8 @@
 /* Columns */
 
 .column {
-	margin-left: 2%;
-	width: 32%;
+	margin-left: 50%;
+	width: 70%;
 }
 .column.first {margin-left: 0;}
 

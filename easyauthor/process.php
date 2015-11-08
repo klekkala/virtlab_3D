@@ -11,27 +11,35 @@ $actions = $_POST['actions'];
 $outcomes = $_POST['outcomes'];
 $constraints;
 
+
+$field_values_array = $_REQUEST['field_name'];
+foreach($field_values_array as $value){
+    $query=mysql_query("INSERT INTO experiment(`name`,`aim`)
+VALUES('$name','$aim')");
+}
+
+
+//query for storing the list of experiments
 $query=mysql_query("INSERT INTO experiment(`name`,`aim`)
 VALUES('$name','$aim')");
 
+//query for storing steps and their aims in the step table
 $query=mysql_query("INSERT INTO step(`name`,`aim`)
 VALUES('$name','$aim')");
 
-$query=mysql_query("INSERT INTO anim(`name`,`aim`)
-VALUES('$name','$aim')");
+//query for storing animation name in the anim table
+$query=mysql_query("INSERT INTO anim('name')
+VALUES('$name')");
 
-$query=mysql_query("INSERT INTO object(`name`,`aim`)
-VALUES('$name','$aim')");
+//query for storing object name in the object table
+$query=mysql_query("INSERT INTO object('name')
+VALUES('$object')");
 
-$query=mysql_query("INSERT INTO const(`name`,`aim`)
-VALUES('$name','$aim')");
+//query for storing constraints in the cons table
+$query=mysql_query("INSERT INTO const('cons')
+VALUES('$cons')");
 }
 
-else if($value == 'action'){
-$password = $_POST['pass'];
-$query=mysql_query("INSERT INTO $db_name(`name`,`password`)
-VALUES('$name','$encrypted')");
-}
 
 
 
