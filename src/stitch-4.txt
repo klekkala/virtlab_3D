@@ -1,28 +1,33 @@
-
 <div class="tab-pane" id="tab1">
                               <div class="control-group">
-                                <label class="control-label" for="name">step</label>
+                                <label class="control-label" for="step">step</label>
                                 <div class="controls">
-                                  <input type="text" id="namefield" name="namefield" class="required">
+                                  <input type="text" id="namefield" name="stepfield" class="required">
+                                </div>
+                              </div>
+			       <div class="control-group">
+                                <label class="control-label" for="desc">description</label>
+                                <div class="controls">
+                                  <input type="text" id="namefield" name="descfield" class="required">
                                 </div>
                               </div>
 
                               <div class="control-group">
-                                <label class="control-label" for="name">actions</label>
+                                <label class="control-label" for="actions">actions</label>
                                 <div class="controls">
-                                  <input type="text" id="namefield" name="namefield" class="required">
+                                  <input type="text" id="namefield" name="actionfield" class="required">
                                 </div>
                               </div>
 
                               <div class="control-group">
-                                <label class="control-label" for="name">outcomes</label>
+                                <label class="control-label" for="outcomes">outcomes</label>
                                 <div class="controls">
-                                  <input type="text" id="namefield" name="namefield" class="required">
+                                  <input type="text" id="namefield" name="outcomefield" class="required">
                                 </div>
                               </div>
 
                                <div class="control-group">
-                                <label class="control-label" for="name">constraints</label>
+                                <label class="control-label" for="constraints">constraints</label>
                                <div class="field_wrapper">
     <div>
         <input type="text" name="field_name[]" value=""/>
@@ -30,6 +35,7 @@
     </div>
 </div>
                               </div>
-                        </div>
-           
 
+<input type="submit" class="button" name="insert" value="insert" />
+
+                    </div>

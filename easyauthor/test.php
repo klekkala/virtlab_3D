@@ -78,12 +78,12 @@ function translate($text, $lang){
 
 
 <?php$lang = 'ta'?>            <h1><?php translate('3D Physics virtual lab', $lang) ?> </h1>
-    <h5> <?php translate('You can design your experiments. Input the given details and generate your lab', $lang) ?></h2>
+	<h5> <?php translate('You can design your experiments. Input the given details and generate your lab', $lang) ?></h2>
         </div>
         <form id="commentForm" method="get" action="" class="form-horizontal">
             <div id="rootwizard">
-                <ul>
-<li><a href='#tab1' data-toggle='tab'>Tension in pulley</a></li><li><a href='#tab2' data-toggle='tab'>ATwood machine</a></li><li><a href='#tab3' data-toggle='tab'>Moving wedge</a></li><li><a href='#tab4' data-toggle='tab'>Free fall</a></li><li><a href='#tab5' data-toggle='tab'> Pusing blocks</a></li>
+                <ul>    
+<li><a href='#tab1' data-toggle='tab'>Finding out g</a></li><li><a href='#tab2' data-toggle='tab'>Tension in pulley</a></li><li><a href='#tab3' data-toggle='tab'>ATwood machine</a></li><li><a href='#tab4' data-toggle='tab'>Moving wedge</a></li><li><a href='#tab5' data-toggle='tab'>Free fall</a></li>            
 
 
 </ul>
@@ -95,7 +95,6 @@ function translate($text, $lang){
 
 
                 <div class="tab-content">
-
 
 <div class="tab-pane" id="tab1">
                               <div class="control-group">
@@ -138,65 +137,36 @@ function translate($text, $lang){
 <input type="submit" class="button" name="insert" value="insert" />
 
                     </div>
-
-
-
 <div class="tab-pane" id="tab1">
-
- <div class="control-group">
-                                <label class="control-label" for="name">hello</label>
+                              <div class="control-group">
+                                <label class="control-label" for="step">step</label>
                                 <div class="controls">
-                                 <div id="example-1-2">
-
-                <div class="column left first">
-
-                    <ul class="sortable-list">
-                        <li class="sortable-item">Sortable item A</li>
-                        <li class="sortable-item">Sortable item B</li>
-                    </ul>
-
-                </div>
-
-                <div class="column left">
-
-                    <ul class="sortable-list">
-                        <li class="sortable-item">Sortable item C</li>
-                        <li class="sortable-item">Sortable item D</li>
-                    </ul>
-
-                </div>
-
-
-
-                <div class="clearer">&nbsp;</div>
-
-            </div>
+                                  <input type="text" id="namefield" name="stepfield" class="required">
+                                </div>
+                              </div>
+			       <div class="control-group">
+                                <label class="control-label" for="desc">description</label>
+                                <div class="controls">
+                                  <input type="text" id="namefield" name="descfield" class="required">
                                 </div>
                               </div>
 
                               <div class="control-group">
-                                <label class="control-label" for="name">step</label>
+                                <label class="control-label" for="actions">actions</label>
                                 <div class="controls">
-                                  <input type="text" id="namefield" name="namefield" class="required">
+                                  <input type="text" id="namefield" name="actionfield" class="required">
                                 </div>
                               </div>
 
                               <div class="control-group">
-                                <label class="control-label" for="name">actions</label>
+                                <label class="control-label" for="outcomes">outcomes</label>
                                 <div class="controls">
-                                  <input type="text" id="namefield" name="namefield" class="required">
-                                </div>
-                              </div>
-
-                              <div class="control-group">
-                                <label class="control-label" for="name">outcomes</label>
-                                <div class="controls">
-                                  <input type="text" id="namefield" name="namefield" class="required">
+                                  <input type="text" id="namefield" name="outcomefield" class="required">
                                 </div>
                               </div>
 
                                <div class="control-group">
-                                <label class="control-label" for="name">constraints</label>
+                                <label class="control-label" for="constraints">constraints</label>
                                <div class="field_wrapper">
     <div>
         <input type="text" name="field_name[]" value=""/>
@@ -204,34 +174,40 @@ function translate($text, $lang){
     </div>
 </div>
                               </div>
-                        </div>
 
+<input type="submit" class="button" name="insert" value="insert" />
 
-
+                    </div>
 <div class="tab-pane" id="tab1">
                               <div class="control-group">
-                                <label class="control-label" for="name">step</label>
+                                <label class="control-label" for="step">step</label>
                                 <div class="controls">
-                                  <input type="text" id="namefield" name="namefield" class="required">
+                                  <input type="text" id="namefield" name="stepfield" class="required">
+                                </div>
+                              </div>
+			       <div class="control-group">
+                                <label class="control-label" for="desc">description</label>
+                                <div class="controls">
+                                  <input type="text" id="namefield" name="descfield" class="required">
                                 </div>
                               </div>
 
                               <div class="control-group">
-                                <label class="control-label" for="name">actions</label>
+                                <label class="control-label" for="actions">actions</label>
                                 <div class="controls">
-                                  <input type="text" id="namefield" name="namefield" class="required">
+                                  <input type="text" id="namefield" name="actionfield" class="required">
                                 </div>
                               </div>
 
                               <div class="control-group">
-                                <label class="control-label" for="name">outcomes</label>
+                                <label class="control-label" for="outcomes">outcomes</label>
                                 <div class="controls">
-                                  <input type="text" id="namefield" name="namefield" class="required">
+                                  <input type="text" id="namefield" name="outcomefield" class="required">
                                 </div>
                               </div>
 
                                <div class="control-group">
-                                <label class="control-label" for="name">constraints</label>
+                                <label class="control-label" for="constraints">constraints</label>
                                <div class="field_wrapper">
     <div>
         <input type="text" name="field_name[]" value=""/>
@@ -239,34 +215,40 @@ function translate($text, $lang){
     </div>
 </div>
                               </div>
-                        </div>
 
+<input type="submit" class="button" name="insert" value="insert" />
 
-
+                    </div>
 <div class="tab-pane" id="tab1">
                               <div class="control-group">
-                                <label class="control-label" for="name">step</label>
+                                <label class="control-label" for="step">step</label>
                                 <div class="controls">
-                                  <input type="text" id="namefield" name="namefield" class="required">
+                                  <input type="text" id="namefield" name="stepfield" class="required">
+                                </div>
+                              </div>
+			       <div class="control-group">
+                                <label class="control-label" for="desc">description</label>
+                                <div class="controls">
+                                  <input type="text" id="namefield" name="descfield" class="required">
                                 </div>
                               </div>
 
                               <div class="control-group">
-                                <label class="control-label" for="name">actions</label>
+                                <label class="control-label" for="actions">actions</label>
                                 <div class="controls">
-                                  <input type="text" id="namefield" name="namefield" class="required">
+                                  <input type="text" id="namefield" name="actionfield" class="required">
                                 </div>
                               </div>
 
                               <div class="control-group">
-                                <label class="control-label" for="name">outcomes</label>
+                                <label class="control-label" for="outcomes">outcomes</label>
                                 <div class="controls">
-                                  <input type="text" id="namefield" name="namefield" class="required">
+                                  <input type="text" id="namefield" name="outcomefield" class="required">
                                 </div>
                               </div>
 
                                <div class="control-group">
-                                <label class="control-label" for="name">constraints</label>
+                                <label class="control-label" for="constraints">constraints</label>
                                <div class="field_wrapper">
     <div>
         <input type="text" name="field_name[]" value=""/>
@@ -274,34 +256,40 @@ function translate($text, $lang){
     </div>
 </div>
                               </div>
-                        </div>
 
+<input type="submit" class="button" name="insert" value="insert" />
 
-
+                    </div>
 <div class="tab-pane" id="tab1">
                               <div class="control-group">
-                                <label class="control-label" for="name">step</label>
+                                <label class="control-label" for="step">step</label>
                                 <div class="controls">
-                                  <input type="text" id="namefield" name="namefield" class="required">
+                                  <input type="text" id="namefield" name="stepfield" class="required">
+                                </div>
+                              </div>
+			       <div class="control-group">
+                                <label class="control-label" for="desc">description</label>
+                                <div class="controls">
+                                  <input type="text" id="namefield" name="descfield" class="required">
                                 </div>
                               </div>
 
                               <div class="control-group">
-                                <label class="control-label" for="name">actions</label>
+                                <label class="control-label" for="actions">actions</label>
                                 <div class="controls">
-                                  <input type="text" id="namefield" name="namefield" class="required">
+                                  <input type="text" id="namefield" name="actionfield" class="required">
                                 </div>
                               </div>
 
                               <div class="control-group">
-                                <label class="control-label" for="name">outcomes</label>
+                                <label class="control-label" for="outcomes">outcomes</label>
                                 <div class="controls">
-                                  <input type="text" id="namefield" name="namefield" class="required">
+                                  <input type="text" id="namefield" name="outcomefield" class="required">
                                 </div>
                               </div>
 
                                <div class="control-group">
-                                <label class="control-label" for="name">constraints</label>
+                                <label class="control-label" for="constraints">constraints</label>
                                <div class="field_wrapper">
     <div>
         <input type="text" name="field_name[]" value=""/>
@@ -309,10 +297,10 @@ function translate($text, $lang){
     </div>
 </div>
                               </div>
-                        </div>
 
+<input type="submit" class="button" name="insert" value="insert" />
 
-
+                    </div>
 </div>
                 <ul class="pager wizard">
                     <li class="previous first" style="display:none;"><a href="#"><?php translate('First', $lang) ?></a></li>
