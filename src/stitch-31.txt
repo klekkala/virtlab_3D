@@ -1,8 +1,0 @@
- <label class="control-label" for="image">Image</label>
-                            <div class="controls">
-                                <input type="image" id="imagefield" name="imagefield" class="required image">
-                            </div>
-                        </div>
-
-             </div>
-
