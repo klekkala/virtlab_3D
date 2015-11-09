@@ -124,7 +124,7 @@ $(document).ready(function(){
     $('.button').click(function(){
         var clickBtnValue = $(this).val();
         var ajaxurl = 'process.php',
-        data =  {'insert': clickBtnValue};
+        data =  {'insert': outcomefield};
         $.post(ajaxurl, data, function (response) {
             // Response div goes here.
             alert("action performed successfully");

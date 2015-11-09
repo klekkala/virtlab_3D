@@ -1,6 +1,7 @@
 <?php
 if(isset($_REQUEST['insert'])){
 
+echo 'You entered: ', htmlspecialchars($_POST['something']);
 $servername = "localhost";
 $username = "root";
 $password = "qwertyuiop";

@@ -41,7 +41,8 @@ function xml_to_object($xml, $val) {
     $i = 0;
     foreach ($tags as $tag) {
   
-        if ($tag['type'] == "complete" || $tag['type'] == "open") 
+        if ($tag['type'] == "complete" || $tag['type'] == "open") {
+            $elements[$index] = new XmlElement;
             if($tag['tag']=='step'){
                 array_push($tabs,$tag['value']);
 
