@@ -1,46 +1,46 @@
 <?php
+if ($_SERVER["REQUEST_METHOD"]== "POST"){
 
-//request the given inputs from the wizard input elements
-if (isset($_POST['insert'])) {
-    $servername = "localhost";
-    $username = "root";
-    $password = "qwertyuiop";
-    $dbname = "virtual";
-echo $_POST['insert'];
-    // Create connection
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
-    // Check connection
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
+$servername = "localhost";
+$username = "root";
+$password = "qwertyuiop";
+$dbname = "virtual";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+//error_reporting(E_ALL); ini_set('display_errors',1);
+
+	$field_values_array = $_REQUEST['field_name'];
+	$name = $_REQUEST['stepfield'];
+	$desc = $_REQUEST['descfield'];
+	$outcome = $_REQUEST['outcomefield'];
+	$action = $_REQUEST['actionfield'];
+	
+	
+	$step = 1;
+	$sql = "INSERT INTO step(name,description,action,outcome) VALUES('$name','$desc','$action','$outcome')";
+if (mysqli_query($conn, $sql)) {
+    
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
 
 
+	foreach($field_values_array as $value){
+		
+		$sql = "INSERT INTO constrain(sid,cons) VALUES($step,'$value')";
+if (mysqli_query($conn, $sql)) {
+    
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
 
-    $field_values_array = $_POST['field_name'];
-    $name = $_POST['stepfield'];
-    $desc = $_POST['descfield'];
-    $outcome = $_POST['outcomefield'];
-    $action = $_POST['actionfield'];
-echo 2;
-
-    $step = 1;
-    echo $field_values_array;
-    echo $step;
-    $sql = "INSERT INTO step(name,description,action,outcome) VALUES('$name','$desc','$action','$outcome')";
-    mysqli_query($conn, $sql);
-
-
-    foreach ($field_values_array as $value){
-
-        $sql = "INSERT INTO constrain(sid,cons) VALUES($step,'$value')";
-        mysqli_query($conn, $sql);
-
-    }
-    mysqli_close($conn);
+}
+mysqli_close($conn);
 }
 ?>
-
-
-
-
-

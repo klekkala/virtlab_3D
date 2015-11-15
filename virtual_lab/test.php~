@@ -1,56 +1,8 @@
-<?php
-if ($_SERVER["REQUEST_METHOD"]== "POST"){
-
-$servername = "localhost";
-$username = "root";
-$password = "qwertyuiop";
-$dbname = "virtual";
-
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-echo "hello";
-//error_reporting(E_ALL); ini_set('display_errors',1);
-
-	$field_values_array = $_REQUEST['field_name'];
-	$name = $_REQUEST['stepfield'];
-	$desc = $_REQUEST['descfield'];
-	$outcome = $_REQUEST['outcomefield'];
-	$action = $_REQUEST['actionfield'];
-	
-	
-	$step = 1;
-	$sql = "INSERT INTO step(name,description,action,outcome) VALUES('$name','$desc','$action','$outcome')";
-if (mysqli_query($conn, $sql)) {
-    
-} else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
-
-
-	foreach($field_values_array as $value){
-		
-		$sql = "INSERT INTO constrain(sid,cons) VALUES($step,'$value')";
-if (mysqli_query($conn, $sql)) {
-    
-} else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
-
-}
-mysqli_close($conn);
-}
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>EasyAuthor</title>
+<title>Virutal_lab</title>
 <!-- Bootstrap -->
 <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="../prettify.css" rel="stylesheet">
@@ -82,7 +34,7 @@ mysqli_close($conn);
 
                 <div class="tab-content">
 
-<form method="post" action= "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<form action= "process.php" method="post" >
 <div class="tab-pane" id="tab1">
                               <div class="control-group">
                                 <label class="control-label" for="step">step</label>
@@ -121,7 +73,7 @@ mysqli_close($conn);
 </div>
                               </div>
 
-<input type="submit" class="button" name="insert" value="insert" onClick="self.location='test.php'" />
+<input type="submit" class="button" name="insert" value="insert" />
 
                     </div>
 </form>
@@ -316,40 +268,26 @@ mysqli_close($conn);
 </section>
 </div>
 
-<!-- Example JavaScript files -->
+<!--*****************************************************************************************************************************************-->
+<!--*****************************************************************************************************************************************-->
+<!--*****************************************************************************************************************************************-->
+
+
+
 <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="jquery-ui-1.8.custom.min.js"></script>
 
-<!-- Example jQuery code (JavaScript)  -->
 <script type="text/javascript" src="drag_drop.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript" src="add_field.js"></script>
-<!--*****************************************************************************************************************************************-->
-<!--*****************************************************************************************************************************************-->
-<!--*****************************************************************************************************************************************-->
-
-
-
-
-
-<!--*****************************************************************************************************************************************-->
-<!--*****************************************************************************************************************************************-->
-<!--*****************************************************************************************************************************************-->
-
 
 <!--***********Script for the wizard options and the animations. Consists of the functions declared in the above html body****************-->
-<!--*****************************************************************************************************************************************-->
-<!--*****************************************************************************************************************************************-->
-<!--*****************************************************************************************************************************************-->
-
- <script src="http://code.jquery.com/jquery-latest.js"></script>
-  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
-  <script src="../bootstrap/js/bootstrap.min.js"></script>
-  <script src="../jquery.bootstrap.wizard.js"></script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../jquery.bootstrap.wizard.js"></script>
 <script src="../prettify.js"></script>
 <script src="wizard.js"></script>
-<!--*****************************************************************************************************************************************-->
-<!--*****************************************************************************************************************************************-->
-<!--*****************************************************************************************************************************************-->
-        </body>
-        </html>
+
+</body>
+</html>
