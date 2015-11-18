@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="generator" content="xml3d-blender-exporter v0.4.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="all" href="./public/style/normalize.css">
+    <link rel="stylesheet" type="text/css" media="all" href="./public/style/foundation.css">
+    <link rel="stylesheet" type="text/css" media="all" href="./public/style/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="all" href="./public/style/xml3d-blender-preview.css">
+    <script src="./public/scripts/vendor/modernizr.js"></script>
+    <script src="./public/scripts/vendor/jquery.js"></script>
+    <script src="./public/scripts/foundation.min.js"></script>
+    <script src="./common/scripts/xml3d/xml3d-4.9-min.js" type="text/javascript"></script>
+    <script src="./common/scripts/xml3d/camera.js" type="text/javascript"></script>
+    <script src="./common/scripts/blender-xflow.js" type="text/javascript"></script>
+    <script src="./public/scripts/stats.js" type="text/javascript"></script>
+    <script src="./public/scripts/xml3d-blender-preview.js" type="text/javascript"></script>
+
+
+    <title>Scene</title>
+</head>
+<body>
+<div class="fixed">
+    <nav class="top-bar bottom-bar">
+        <ul class="title-area">
+            <li class="name"><h1><a href="">XML3D-Blender</a></h1></li>
+        </ul>
+        <section class="top-bar-section">
+        <ul class="left">
+        </ul>
+        <ul class="right">
+            <li class='divider'></li>
+            <li><a class='renderStats' href='#'></a></li>
+            <li class='divider'></li>
+            <li><a href='#'><span class="fa fa-circle-o-notch fa-spin"></span></a></li>
+            <li class='divider'></li>
+            <li><a href="#" data-reveal-id="statisticsModal"><span class='fa fa-bar-chart'></span></a>
+            <li class='divider'></li>
+            <li><a href="#" data-reveal-id="warningsModal"><span id='bell' class='fa fa-bell-o fa-lg message-parent'></span></a>
+            </li>
+        </ul>
+        </section>
+    </nav>
+</div>
+<xml3d id="Scene" activeView="#v_Camera_01" style="width: 100%; height: 100%; background-color:rgb(65,65,65);">
+ <defs></defs>
+ <view id="v_view"></view>
+ <group id="GEO_SBD" class="layer-0" style="transform:matrix3d(-0.669659,0.742668,0.000000,0.000000,-0.742668,-0.669659,0.000000,0.000000,0.000000,0.000000,1.000000,0.000000,-1.531838,0.000000,0.082610,1.000000);">
+  <model src="assets/assets-0.xml#GEO_SBD"></model>
+ </group>
+ <group id="GEO_Front_Rail" class="layer-0" style="transform:matrix3d(0.257272,-0.869025,-0.422618,0.000000,0.958863,0.283868,0.000000,0.000000,0.119968,-0.405233,0.906308,0.000000,-1.496817,-0.013217,1.146112,1.000000);">
+  <model src="assets/assets-1.xml#GEO_Rail_Front"></model>
+ </group>
+ <group id="GEO_Back_Bracket-" class="layer-0" style="transform:matrix3d(-0.283783,0.958888,0.000000,0.000000,-0.958888,-0.283783,0.000000,0.000000,0.000000,0.000000,1.000000,0.000000,-2.524798,-0.308887,1.537055,1.000000);">
+  <model src="assets/assets-2.xml#GEO_Back_App"></model>
+ </group>
+ <group id="GEO_Front_Bracket" class="layer-0" style="transform:matrix3d(-0.283783,0.958888,0.000000,0.000000,-0.958888,-0.283783,0.000000,0.000000,0.000000,0.000000,1.000000,0.000000,-1.499327,-0.005363,1.537055,1.000000);">
+  <model src="assets/assets-3.xml#GEO_Front_App"></model>
+ </group>
+ <group id="GEO_Back_Rail" class="layer-0" style="transform:matrix3d(0.257272,-0.869025,0.422618,0.000000,0.958863,0.283868,0.000000,0.000000,-0.119968,0.405233,0.906308,0.000000,-2.522286,-0.316740,1.146112,1.000000);">
+  <model src="assets/assets-4.xml#GEO_Rail_Back"></model>
+ </group>
+ <group id="Camera_01_Target" class="layer-0" style="transform:matrix3d(0.146055,0.000000,0.000000,0.000000,0.000000,0.146055,0.000000,0.000000,0.000000,0.000000,0.146055,0.000000,-1.742408,0.358459,1.281485,1.000000);"></group>
+ <group id="Camera_01" class="layer-0" style="transform:matrix3d(-0.133055,0.131619,-0.002025,0.000000,-0.059898,-0.057974,0.167578,0.000000,0.117217,0.119778,0.083335,0.000000,1.877353,3.732190,3.912332,1.000000);">
+  <view id="v_Camera_01"></view>
+ </group>
+ <group id="Lamp.001" class="layer-0" style="transform:matrix3d(-0.170782,0.068306,-0.034630,0.000000,-0.066962,-0.092120,0.148531,0.000000,0.037162,0.147917,0.108493,0.000000,-0.091300,2.919238,4.801394,1.000000);"></group>
+</xml3d>
+
+<div id="warningsModal" class="reveal-modal" data-reveal>
+  <h4><i class="fa fa-exclamation-triangle"></i> Warnings</h4><hr>
+  <div class="warningsList"></div>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="statisticsModal" class="reveal-modal" data-reveal>
+    <div class="d3Target"></div>
+      <a class="close-reveal-modal">&#215;</a>
+</div>
+<script>
+    $(document).foundation();
+</script>
+</body>
+</html>

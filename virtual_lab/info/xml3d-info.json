@@ -1,0 +1,54 @@
+{
+    "animations": [],
+    "armatures": [],
+    "assets": [
+        {
+            "name": "assets-1.xml",
+            "size": 206526,
+            "url": "/var/www/html/virtual_lab/assets/assets-1.xml"
+        },
+        {
+            "name": "assets-3.xml",
+            "size": 54404,
+            "url": "/var/www/html/virtual_lab/assets/assets-3.xml"
+        },
+        {
+            "name": "assets-4.xml",
+            "size": 205583,
+            "url": "/var/www/html/virtual_lab/assets/assets-4.xml"
+        },
+        {
+            "name": "assets-2.xml",
+            "size": 54602,
+            "url": "/var/www/html/virtual_lab/assets/assets-2.xml"
+        },
+        {
+            "name": "assets-0.xml",
+            "size": 769213,
+            "url": "/var/www/html/virtual_lab/assets/assets-0.xml"
+        }
+    ],
+    "groups": 8,
+    "lights": 0,
+    "materials": [
+        {
+            "name": "shared-materials.xml",
+            "size": 1958
+        }
+    ],
+    "meshes": [],
+    "scene": {
+        "name": "Ch03_04_Slider_Constraint.html",
+        "size": 4888
+    },
+    "textures": [],
+    "views": 1,
+    "warnings": [
+        {
+            "category": "lamp",
+            "issue": 4,
+            "message": "Lamp 'Lamp.001' is of type 'AREA', which is not (yet) supported. Skipped lamp.",
+            "object": null
+        }
+    ]
+}
