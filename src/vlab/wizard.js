@@ -5,6 +5,8 @@ $(document).ready(function() {
         var $percent = ($current/$total) * 100;
         $('#rootwizard .progress-bar').css({width:$percent+'%'});
             }});
+
+
         $('#pills').bootstrapWizard({'tabClass': 'nav nav-pills', 'debug': false, onShow: function(tab, navigation, index) {
             console.log('onShow');
             }, onNext: function(tab, navigation, index) {

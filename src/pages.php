@@ -53,34 +53,34 @@ function xml_to_object($xml, $val) {
             else if($tag['tag'] == 'aim'){
                 array_push($aim,$tag['value']);
 
-            }
-            else{
-                array_push($lang,$tag['tag']);
-                $i++;
-            }
+                }
+                else{
+                    array_push($lang,$tag['tag']);
+                    $i++;
+                }
+        }
+
+    return array($aim, $lang, $tabs);
+       }
+        //file pointers initialized and pointed
+    $read=0;
+    $write=0;
+       function file_operation(int op){
+       foreach (glob("files/*.txt") as $file) {
+        $file_handle = fopen($file, "r");
+        if(op==0){
+           $rfile[$read++] = fread($file_handle); 
+        }
+        else{
+        $wfile[$write++] = fread($file_handle);
     }
+        echo $rfile[$read];
+        fclose($file_handle);
+    }
+    $xml = fopen("/var/www/html/config/telugu/exp-1.xml", "r") or die("Unable to open file!");
+    fclose($xml);
+       }
 
-return array($aim, $lang, $tabs);
-   }
-    //file pointers initialized and pointed
-
-    $wfile = fopen("/var/www/html/virtual_lab/test.php", "w") or die("Unable to open file!");
-    $rfile = fopen("/var/www/html/config/english.xml", "r") or die("Unable to open file!");
-
-    $rfile1 = fopen("/var/www/html/src/stitch-1.txt", "r") or die("Unable to open file!");
-    $rfile2 = fopen("/var/www/html/src/stitch-2.txt", "r") or die("Unable to open file!");
-    $rfile3 = fopen("/var/www/html/src/stitch-3.txt", "r") or die("Unable to open file!");
-    $rfile4 = fopen("/var/www/html/src/stitch-4.txt", "r") or die("Unable to open file!");
-    $rfile5 = fopen("/var/www/html/src/stitch-5.txt", "r") or die("Unable to open file!");
-
-
-    //file pointers reading or writing
-    $xml = fread($rfile,filesize("/var/www/html/config/english.xml"));
-    $txt1 = fread($rfile1,filesize("/var/www/html/src/stitch-1.txt"));
-    $txt2 = fread($rfile2,filesize("/var/www/html/src/stitch-2.txt"));
-    $txt3 = fread($rfile3,filesize("/var/www/html/src/stitch-3.txt"));
-    $txt4 = fread($rfile4,filesize("/var/www/html/src/stitch-4.txt"));
-    $txt5 = fread($rfile5,filesize("/var/www/html/src/stitch-5.txt"));
 
     //$val is the variable which consists of the attribute in the xml file. You get the data which is enclosed in the attribute
     $val = "name";
@@ -122,14 +122,6 @@ return array($aim, $lang, $tabs);
     }
 
     fwrite($wfile, $txt5);
-
-    fclose($rfile);
-    fclose($wfile);
-    fclose($rfile1);
-    fclose($rfile2);
-    fclose($rfile3);
-    fclose($rfile4);
-    fclose($rfile5);
 ?>
 
 
