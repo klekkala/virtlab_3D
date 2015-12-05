@@ -30,7 +30,7 @@
 
         <div class="row">
         <!--<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">-->
-        <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="col-sm-3 col-md-3 col-lg-3">
 
         <form action= "process.php" method="post" >
         <div class="tab-pane" id="tab1">
@@ -78,25 +78,31 @@
 
         </div>
 
-
-        <div class="col-sm-8 col-lg-8 col-md-8">
+<div class="col-sm-3 col-md-3 col-lg-3">
+<h4> Apparatus </h4>
+<button type="button">Wedge</button> Click to get a wedge<br><br>
+<button type="button">Block</button>Click to get a wedge<br><br>
+<button type="button">Pulley</button>Click to get a wedge<br><br>
+<button type="button">Thread</button>Click to get a wedge<br><br>
+<button type="button">Base</button>Click to get a wedge<br><br>
+</div>
+        <div class="col-sm-6 col-lg-6 col-md-6"> 
         <script src="_site/js/vendor/jquery-2.1.3.min.js"></script>
         <script src="_site/js/app.js"></script>
         <script src="_site/js/pixi.js"></script>
         <script id="example-script"></script>
         <!--<script src="animation.js"></script> -->
-        Hello world this is my right side!!
-        <canvas height="200" width="100" style="cursor: inherit;"></canvas>
-        </div>
+        <img src="experiment.jpg" alt="Finding g" style="width:600px;height:350px;">
+        <br>
 
-
+<input type="button" value="Reset all" style="float: right;">&nbsp;&nbsp;
+&nbsp;<input type="button" value="Insert to database" style="float: right;">
                     </div>
                     </div>
+                    </div>
 
-<br>
 <div class = "row">
 <div class = "col-sm-6 col-lg-6 col-md-6">
-<br>
                     <input type='text' name='stepid' id='stepid' value='1' size='2' style='width:20px;' />
                     <input type='button' class='btn' id='disable-step' value=disable />
                     <input type='button' class='btn' id='enable-step' value='enable' />
@@ -125,12 +131,12 @@
         <script type="text/javascript" src="jquery-ui-1.8.custom.min.js"></script>
 
         <script type="text/javascript" src="drag_drop.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="jquery.min.js"></script>
         <script type="text/javascript" src="add_field.js"></script>
 
         <!--***********Script for the wizard options and the animations. Consists of the functions declared in the above html body****************-->
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+        <script src="jquery-latest.js"></script>
+        <script src="jquery.validate.min.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <script src="jquery.bootstrap.wizard.js"></script>
         <script src="prettify.js"></script>

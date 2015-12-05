@@ -16,7 +16,6 @@
 
         <step>Free fall</step>
 
-
     </steps>
 
     <apparatus>
@@ -30,6 +29,7 @@
 
         <thread>
             <number>4</number>
+
         </thread>
 
         <pulley>
@@ -37,28 +37,44 @@
         </pulley>
     </apparatus>
 
-<types>
-<dropdown></dropdown>
-<slider></slider>
-<radio></radio>
-<button></button>
-</types>
 
+    <animation>
+        <background>
+            blue
+        </background>
+
+        <colours><block>red</block>
+        </colours>
+
+    </animation>
 
 
 
     <variables>
         <block>
-<mass></mass>
-    </block>
-    <thread>
-        <tension></tension>
-    </thread>
-
-    <pulley>
-
-</pulley>
-
+            <from>
+            </from>
+            <to>
+            </to>
+            <units>
+            </units>
+            <tool>
+            </tool>
+        </block>
     </variables>
-    <src>file.txt</src>
+
+    <evaluation>
+        <error>
+        </error>
+        <message>
+        </message>
+    </evaluation>
+
+    
+    <conclusion>
+    </conclusion>
+
+    <theory>
+        <src>file.txt</src>
+    </theory>
 </experiment-1>
