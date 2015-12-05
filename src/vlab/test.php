@@ -127,18 +127,17 @@
 
 
 
-        <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
-        <script type="text/javascript" src="jquery-ui-1.8.custom.min.js"></script>
-
-        <script type="text/javascript" src="drag_drop.js"></script>
-        <script src="jquery.min.js"></script>
+        <script type="text/javascript" src="jquery/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="jquery/jquery-ui-1.8.custom.min.js"></script>
+        
+        <script src="jquery/jquery.min.js"></script>
         <script type="text/javascript" src="add_field.js"></script>
 
         <!--***********Script for the wizard options and the animations. Consists of the functions declared in the above html body****************-->
-        <script src="jquery-latest.js"></script>
-        <script src="jquery.validate.min.js"></script>
+        <script src="jquery/jquery-latest.js"></script>
+        <script src="jquery/jquery.validate.min.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
-        <script src="jquery.bootstrap.wizard.js"></script>
+        <script src="jquery/jquery.bootstrap.wizard.js"></script>
         <script src="prettify.js"></script>
         <script src="wizard.js"></script>
 
