@@ -8,6 +8,22 @@
         <link href="../prettify.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="devheart-examples.css" media="screen" />
+
+        <style>
+
+
+canvas {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+canvas:active { 
+  cursor: pointer;
+  cursor: -webkit-grabbing;
+}
+</style>
+
         </head>
 
 
@@ -87,12 +103,10 @@
 <button type="button">Base</button>Click to get a wedge<br><br>
 </div>
         <div class="col-sm-6 col-lg-6 col-md-6"> 
-        <script src="_site/js/vendor/jquery-2.1.3.min.js"></script>
-        <script src="_site/js/app.js"></script>
-        <script src="_site/js/pixi.js"></script>
-        <script id="example-script"></script>
+        <script src="matter.js"></script>
+       <script src ="inclined.js"></script>
         <!--<script src="animation.js"></script> -->
-        <img src="experiment.jpg" alt="Finding g" style="width:600px;height:350px;">
+        <!--<img src="experiment.jpg" alt="Finding g" style="width:600px;height:350px;">-->
         <br>
 
 <input type="button" value="Reset all" style="float: right;">&nbsp;&nbsp;
@@ -129,7 +143,7 @@
 
         <script type="text/javascript" src="jquery/jquery-1.4.2.min.js"></script>
         <script type="text/javascript" src="jquery/jquery-ui-1.8.custom.min.js"></script>
-        
+
         <script src="jquery/jquery.min.js"></script>
         <script type="text/javascript" src="add_field.js"></script>
 
