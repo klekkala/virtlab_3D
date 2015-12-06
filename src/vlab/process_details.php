@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST"){
     $desc = $_REQUEST['descfield'];
     $outcome = $_REQUEST['outcomefield'];
     $action = $_REQUEST['actionfield'];
-    $step = $_REQUEST['step_number'];
+    $step = $_REQUEST['step_number']
 
 
     $sql = "INSERT INTO step(name,description,action,outcome) VALUES('$name','$desc','$action','$outcome')";

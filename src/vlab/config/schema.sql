@@ -1,5 +1,6 @@
-##Database schema file####
 ##Author: Kiran Kumar Lekkala###
+##Database schema file####
+##Created: 15 Nov 2015###
 
 create database virtual;
 use database virtual;

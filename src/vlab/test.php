@@ -44,12 +44,12 @@ canvas:active {
                         <div id="bar" class="progress progress-info progress-striped">
                             <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
                         </div>
-
+<div class = "tab-content">
         <div class="row">
         <!--<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">-->
         <div class="col-sm-3 col-md-3 col-lg-3">
 
-        <form action= "process.php" method="post" >
+        <form action= "process_details.php" method="post" >
         <div class="tab-pane" id="tab1">
                                       <div class="control-group">
                                             <label class="control-label" for="step">step</label>
@@ -105,14 +105,9 @@ canvas:active {
 <button type="button" value = "thread" class = "apparatus">Thread</button><br>Number of Blocks used:<br>
 <button type="button" value = "base" class = "apparatus">Base</button><br>Number of Blocks used:<br>
 </ul>
+
 </form>
 
-<ul class="sizeDriller">
-  <li><input type="button" value="S" class="apparatus" /></li>
-  <li><input type="button" value="M" class="sizeInput" /></li>
-  <li><input type="button" value="L" class="sizeInput" /></li>
-  <li><input type="button" value="XL" class="sizeInput" /></li>
-</ul>
 </div>
         <div class="col-sm-6 col-lg-6 col-md-6"> 
        <!-- <script src="matter.js"></script>
@@ -125,6 +120,7 @@ canvas:active {
 &nbsp;<input type="button" value="Insert to database" style="float: right;">
                     </div>
                     </div>
+
                     </div>
 
 <div class = "row">
@@ -141,9 +137,10 @@ canvas:active {
                             <li class="previous first" style="display:none;"><a href="#">First</a></li>
                             <li class="previous"><a href="#">Previous</a></li>
                             <li class="next last" style="display:none;"><a href="#">Last</a></li>
-                            <li class="next"><a href="#">Next</a></li>
+                            <li class="next"><a href="#2">Next</a></li>
                             <li class="finish"><a href=**>Finish</a></li>
                         </ul>
+                        </div>
         </div>
         </div>
         </div>
