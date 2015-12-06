@@ -103,10 +103,10 @@ canvas:active {
 <button type="button">Base</button>Click to get a wedge<br><br>
 </div>
         <div class="col-sm-6 col-lg-6 col-md-6"> 
-        <script src="matter.js"></script>
-       <script src ="inclined.js"></script>
+       <!-- <script src="matter.js"></script>
+       <script src ="inclined.js"></script>-->
         <!--<script src="animation.js"></script> -->
-        <!--<img src="experiment.jpg" alt="Finding g" style="width:600px;height:350px;">-->
+        <img src="experiment.jpg" alt="Finding g" style="width:600px;height:350px;">
         <br>
 
 <input type="button" value="Reset all" style="float: right;">&nbsp;&nbsp;
