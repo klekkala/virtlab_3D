@@ -1,3 +1,9 @@
+##Database schema file####
+##Author: Kiran Kumar Lekkala###
+
+create database virtual;
+use database virtual;
+
 create table step(
 
 sid INT not null auto_increment, 
@@ -36,8 +42,9 @@ vid INT not null auto_increment,
 sid INT,
 name varchar(20),
 type varchar(20),
-range varchar(20),
-rtype varchar(20),
-)
-
+from_unit varchar(20),
+to_unit varchar(20),
+PRIMARY KEY (vid),
+foreign key (sid) REFERENCES step(sid)
+);
 

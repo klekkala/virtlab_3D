@@ -24,6 +24,7 @@ canvas:active {
 }
 </style>
 
+
         </head>
 
 
@@ -97,12 +98,21 @@ canvas:active {
 <div class="col-sm-3 col-md-3 col-lg-3">
 <form action= "process_apparatus.php" method="post" >
 <h4> Apparatus </h4>
-<button type="button" value = >Wedge</button> Click to get a wedge<br><br>
-<button type="button">Block</button>Click to get a wedge<br><br>
-<button type="button">Pulley</button>Click to get a wedge<br><br>
-<button type="button">Thread</button>Click to get a wedge<br><br>
-<button type="button">Base</button>Click to get a wedge<br><br>
+<ul class = "sizeDriller">
+<li><input type="button" value = "wedge" class = "apparatus"/></li>
+<button type="button" value = "block" class = "apparatus">Block</button><br>Number of Blocks used:<br>
+<button type="button" value = "pulley" class = "apparatus">Pulley</button><br>Number of Blocks used:<br>
+<button type="button" value = "thread" class = "apparatus">Thread</button><br>Number of Blocks used:<br>
+<button type="button" value = "base" class = "apparatus">Base</button><br>Number of Blocks used:<br>
+</ul>
 </form>
+
+<ul class="sizeDriller">
+  <li><input type="button" value="S" class="apparatus" /></li>
+  <li><input type="button" value="M" class="sizeInput" /></li>
+  <li><input type="button" value="L" class="sizeInput" /></li>
+  <li><input type="button" value="XL" class="sizeInput" /></li>
+</ul>
 </div>
         <div class="col-sm-6 col-lg-6 col-md-6"> 
        <!-- <script src="matter.js"></script>
@@ -141,7 +151,20 @@ canvas:active {
         <!--*****************************************************************************************************************************************-->
         <!--*****************************************************************************************************************************************-->
 
+        <script>
+$('.apparatus').bind('click', function(){
+  var initial = $(this).val();
+      if(typeof $(this).data('counter') == "undefined"){
+          $(this).data('counter',1); 
+      }else{
+          $(this).data('counter',$(this).data('counter')+1);
+          initial = initial.substr(0,initial.indexOf('/'));
+      }
+     
+   $(this).val(initial+'/'+$(this).data('counter'));
+});
 
+</script>
 
         <script type="text/javascript" src="jquery/jquery-1.4.2.min.js"></script>
         <script type="text/javascript" src="jquery/jquery-ui-1.8.custom.min.js"></script>

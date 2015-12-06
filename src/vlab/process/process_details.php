@@ -3,7 +3,7 @@ if ($_SERVER["REQUEST_METHOD"]== "POST"){
 
 $servername = "localhost";
 $username = "root";
-$password = "qwertyuiop";
+$password = "kiran";
 $dbname = "virtual";
 
 // Create connection
@@ -20,13 +20,12 @@ if (!$conn) {
 	$desc = $_REQUEST['descfield'];
 	$outcome = $_REQUEST['outcomefield'];
 	$action = $_REQUEST['actionfield'];
+	$step = $_REQUEST['step_number']
 	
 	
 	$step = 1;
 	$sql = "INSERT INTO step(name,description,action,outcome) VALUES('$name','$desc','$action','$outcome')";
-if (mysqli_query($conn, $sql)) {
-    
-} else {
+if (mysqli_query($conn, $sql) != 0) {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
@@ -34,13 +33,13 @@ if (mysqli_query($conn, $sql)) {
 	foreach($field_values_array as $value){
 		
 		$sql = "INSERT INTO constrain(sid,cons) VALUES($step,'$value')";
+
 if (mysqli_query($conn, $sql)) {
-    
-} else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
 }
+
 mysqli_close($conn);
 }
 ?>
