@@ -95,12 +95,14 @@ canvas:active {
         </div>
 
 <div class="col-sm-3 col-md-3 col-lg-3">
+<form action= "process_apparatus.php" method="post" >
 <h4> Apparatus </h4>
-<button type="button">Wedge</button> Click to get a wedge<br><br>
+<button type="button" value = >Wedge</button> Click to get a wedge<br><br>
 <button type="button">Block</button>Click to get a wedge<br><br>
 <button type="button">Pulley</button>Click to get a wedge<br><br>
 <button type="button">Thread</button>Click to get a wedge<br><br>
 <button type="button">Base</button>Click to get a wedge<br><br>
+</form>
 </div>
         <div class="col-sm-6 col-lg-6 col-md-6"> 
        <!-- <script src="matter.js"></script>
