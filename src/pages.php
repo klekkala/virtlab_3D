@@ -26,9 +26,9 @@ class XmlElement {
 function xml_to_object($xml, $val) {
 
 
-    $tabs = array();
-    $lang =  array ();
-    $aim = array();
+    $steps = array();
+    $apparatus =  array ();
+    $meta_data = array();
 
 
 
@@ -38,90 +38,110 @@ function xml_to_object($xml, $val) {
     xml_parse_into_struct($parser, $xml, $tags);
     xml_parser_free($parser);
 
-    $i = 0;
+    //Initializing counter for parsing purposes
+    $counter = 0;
+    $check = 0;
+
     foreach ($tags as $tag) {
 
-        if ($tag['type'] == "complete" || $tag['type'] == "open")
-            if($tag['tag']=='step'){
+        if ($tag['type'] == "complete" || $tag['type'] == "open"){
+            if($tag['tag']=='step' || $tag['tag']=='num_steps'){
                 array_push($tabs,$tag['value']);
 
             }
-            else  if($tag['tag']=='num'){
-                array_push($tabs,$tag['value']);
+            else  if($tag['tag']=='num_app'){
+
+                array_push($apparatus,$tag['value']);
+                $check = $tag['value'];
 
             }
-            else if($tag['tag'] == 'aim'){
-                array_push($aim,$tag['value']);
 
+            else if(check != 0){
+                array_push($apparatus,$tag['tag']);
+                $counter+=1;
+                if($counter==$check){
+                    $check = 0;
                 }
-                else{
-                    array_push($lang,$tag['tag']);
-                    $i++;
-                }
+            }
+            else if($tag['tag'] == 'aim' || $tag['tag'] == 'src'){
+                array_push($meta_data,$tag['value']);
+
+            }
         }
 
-    return array($aim, $lang, $tabs);
-       }
-        //file pointers initialized and pointed
-    $read=0;
-    $write=0;
-       function file_operation(int op){
-       foreach (glob("files/*.txt") as $file) {
-        $file_handle = fopen($file, "r");
-        if(op==0){
-           $rfile[$read++] = fread($file_handle); 
+        return array($aim, $lang, $tabs);
+    }
+
+
+
+    //Function: To execute various file_operations which are required by this program
+    //Params: file_operation; 0 -> opening; 1 -> reading; 2 -> closing;
+    //Return: Number of files opened
+    function file_operation(int op){
+        $num_file = 0;
+        foreach (glob("$LAB/src/files/*.*") as $file) {
+            $file_handle = fopen($file, "r");
+            $rfile[$read++] = fread($file_handle);
+
+            echo $rfile[$read];
         }
-        else{
-        $wfile[$write++] = fread($file_handle);
-    }
-        echo $rfile[$read];
-        fclose($file_handle);
-    }
-    $xml = fopen("/var/www/html/config/telugu/exp-1.xml", "r") or die("Unable to open file!");
-    fclose($xml);
-       }
 
+        $write_file = fopen("$LAB/src/vlab/main.php", "w") or die("Unable to open file!");
+        $wfile[$num_file++] = fread($write_file);
 
-    //$val is the variable which consists of the attribute in the xml file. You get the data which is enclosed in the attribute
-    $val = "name";
-    $language = "ta";
+        return $num_file;
+    }
+
+    //Function: To close all the file pointers which are opened by the previous function
+
+    function file_close(file $file_pointer){
+
+        for ($x=1;$x<=$num;$x++){
+            fclose($file_pointer[$x]);
+        }
+    }
+
+    //function to write text to a file pointer. The function is called
+    //params: file_pointer, text variable, value
+
+    function loop_write($file, $txt, $num, $val){
+
+        for ($x=1;$x<=$num;$x++){
+            fwrite($file,$txt);
+        }
+
+    }
+
     //$output is the array which consists of the text fields which is obtained from the xml schema file
     list($aim, $lang, $tabs) = xml_to_object($xml, $val);
 
-
+    $num_files = file_operation(int op);
     //$number is the number of pages which will be present in the easyauthor framework wizard
     $number = $tabs[0];
 
+
     //*********************************Generating process starts*******************************//
 
-    //Initializing HTML and scripts
-    fwrite($wfile, $txt1);
-
-    //Specifing the language
-
-    $txt = "<?php" . "$"."lang = ". "'$language'"."?>";
-    fwrite($wfile, $txt);
+    for($x=1;$x<=num;$x++){
+        loop_write($file, $txt, $num, $val)
+    }
 
 
-    fwrite($wfile, $txt2);
 
     //Tab generating,initializing and naming
 
     //Note: $x starts from 1 because numbering for the tabs starts from 1
-    for ($x = 1; $x <= $number; $x++) {
-        $word = $tabs[$x];
-        $txt = "<li><a href='#tab$x' data-toggle='tab'>$word</a></li>";
-        fwrite($wfile, $txt);
-    }
-
-    fwrite($wfile, $txt3);
 
 
-    for ($x = 1; $x <= $number; $x++){
-        fwrite($wfile, $txt4);
-    }
 
-    fwrite($wfile, $txt5);
+    //Stich for getting the apparatus from the parser and making buttons for the user interface
+    loop_write($file, $tab, $num, $val);
+
+    loop_write($wfile, "<li><a href='#tab".$x. "' data-toggle='tab'>".$array."</a></li>", $number);
+    loop_write($wfile, "<button type="button">". $val. "</button> Click to get a wedge<br><br>", 1);
+
+    //Closing all the file pointers
+    fclose($num_files);
 ?>
 
 

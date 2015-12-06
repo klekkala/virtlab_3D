@@ -5,17 +5,10 @@ name varchar(20),
 description varchar(500),
 action varchar(500),
 outcome varchar(500),
+animation varchar(500),
 PRIMARY KEY (sid)
 );
 
-
-create table anim(
-aid INT not null auto_increment,
-sid INT,
-name varchar(20),
-PRIMARY KEY (aid),
-foreign key (sid) REFERENCES step(sid)
-);
 
 
 create table object(

@@ -1,0 +1,43 @@
+<form action= "process.php" method="post" >
+        <div class="tab-pane" id="tab1">
+                                      <div class="control-group">
+                                            <label class="control-label" for="step">step</label>
+                                        <div class="controls">
+                                          <input type="text" id="namefield" name="stepfield" class="required">
+                                        </div>
+                                      </div>
+                           <div class="control-group">
+                                        <label class="control-label" for="desc">description</label>
+                                        <div class="controls">
+                                          <input type="text" id="namefield" name="descfield" class="required">
+                                        </div>
+                                      </div>
+
+                                      <div class="control-group">
+                                        <label class="control-label" for="actions">actions</label>
+                                        <div class="controls">
+                                          <input type="text" id="namefield" name="actionfield" class="required">
+                                        </div>
+                                      </div>
+
+                                      <div class="control-group">
+                                        <label class="control-label" for="outcomes">outcomes</label>
+                                        <div class="controls">
+                                          <input type="text" id="namefield" name="outcomefield" class="required">
+                                        </div>
+                                      </div>
+
+                                               <div class="control-group">
+                                                <label class="control-label" for="constraints">constraints</label>
+                                               <div class="field_wrapper">
+
+                <input type="text" name="field_name[]" value=""/>
+                    <a href="javascript:void(0);" class="add_button" title="Add field"><img src="plus.png"/></a>
+        </div>
+                                      </div>
+
+<br>
+        <input type="submit" class="button" name="insert" value="insert" />
+
+                            </div>
+        </form>
