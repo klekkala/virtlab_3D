@@ -49,7 +49,7 @@ canvas:active {
         <!--<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">-->
         <div class="col-sm-3 col-md-3 col-lg-3">
 
-        <form action= "process_details.php" method="post" >
+        <form  method="post" action= "process_details.php">
         <div class="tab-pane" id="tab1">
                                       <div class="control-group">
                                             <label class="control-label" for="step">step</label>
@@ -99,11 +99,11 @@ canvas:active {
 <form action= "process_apparatus.php" method="post" >
 <h4> Apparatus </h4>
 <ul class = "sizeDriller">
-<li><input type="button" value = "wedge" class = "apparatus"/></li>
-<button type="button" value = "block" class = "apparatus">Block</button><br>Number of Blocks used:<br>
-<button type="button" value = "pulley" class = "apparatus">Pulley</button><br>Number of Blocks used:<br>
-<button type="button" value = "thread" class = "apparatus">Thread</button><br>Number of Blocks used:<br>
-<button type="button" value = "base" class = "apparatus">Base</button><br>Number of Blocks used:<br>
+<input type="button" value = "wedge" class = "apparatus">Wedge</input><br>Number of wedges used:<br>
+<input type="button" value = "block" class = "apparatus">Block</input><br>Number of Blocks used:<br>
+<input type="button" value = "pulley" class = "apparatus">Pulley</input><br>Number of Blocks used:<br>
+<input type="button" value = "thread" class = "apparatus">Thread</input><br>Number of Blocks used:<br>
+<input type="button" value = "base" class = "apparatus">Base</input><br>Number of Blocks used:<br>
 </ul>
 
 </form>

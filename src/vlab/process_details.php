@@ -1,5 +1,8 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"]== "POST"){
+$requestMethod = isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD'] : null;
+
+if ($requestMethod == 'post') {
+// Post request
 
     $servername = "localhost";
     $username = "root";
