@@ -22,7 +22,7 @@ include 'parse.php'
         $write_file = fopen("$LAB/src/vlab/main.php", "w") or die("Unable to open file!");
         $wfile[$num_file++] = fread($write_file);
 
-        return $num_file;
+        return $rfile;
     }
 
     //Function: To close all the file pointers which are opened by the previous function
@@ -48,15 +48,18 @@ include 'parse.php'
     //$output is the array which consists of the text fields which is obtained from the xml schema file
     list($aim, $lang, $tabs) = xml_to_object($xml, $val);
 
-    $num_files = file_operation(int op);
+    //$rfile is the base file pointer which contains the array of read pointers
+    $rfile = file_operation(int op);
     //$number is the number of pages which will be present in the easyauthor framework wizard
     $number = $tabs[0];
 
 
     //****************************************************Generating process starts*****************************************************//
 
+    //Getting all the read and write pointers
+    $file_pointer = file_operation();
     for($x=1;$x<=num;$x++){
-        loop_write($file, $txt, $num, $val)
+        loop_write($file, $txt, $num, $val);
     }
 
 
