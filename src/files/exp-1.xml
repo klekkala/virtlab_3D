@@ -1,0 +1,70 @@
+<experiment-1>
+
+    <aim>To find the downward force, along an inclined plane, acting on a roller
+        due to gravity and study its relationship with the angle of inclination
+        by plotting graph between force and sin θ.</aim>
+
+    <num_steps>5</num_steps>
+
+    <steps>
+        <step>Finding out g</step>
+
+        <step>Tension in pulley</step>
+
+        <step>ATwood machine</step>
+
+        <step>Moving wedge</step>
+
+        <step>Free fall</step>
+    </steps>
+
+    <num_app>5</num_app>
+
+    <apparatus>
+        <block>
+            <number>4</number>
+        </block>
+
+        <wedge>
+            <number>4</number>
+        </wedge>
+
+        <thread>
+            <number>4</number>
+
+        </thread>
+
+        <pulley>
+            <number>4</number>
+        </pulley>
+    </apparatus>
+
+
+    <animation>
+        <src>incline.js</src>
+    </animation>
+
+
+    <variables>
+        <block>
+            <from>1</from>
+            <to>5</to>
+            <units>KG</units>
+            <tool>slider</tool>
+        </block>
+    </variables>
+
+
+    <evaluation>
+        <error>30</error>
+        <message>Wrong answer! Please check your answer</message>
+    </evaluation>
+
+
+    <conclusion>After doing this experiment, the student will know how to calculate the acceleration due to gravity and will be able to undrestand the concept behind dynamics.</conclusion>
+
+
+    <theory>
+        <src>$LAB/config/exp-1.pdf</src>
+    </theory>
+</experiment-1>

@@ -11,12 +11,13 @@ include 'parse.php'
     //Params: file_operation; 0 -> opening; 1 -> reading; 2 -> closing;
     //Return: Number of files opened
     function file_open(int op){
-        $num_file = 1;
+        $num_file = 0;
         foreach (glob("$LAB/src/files/*.*") as $file) {
             $file_pointer[$num_file++] = fopen($file, "r");
             //echo $rfile[$read];
+            $read_file[$num_file++] = fread($file_pointer, $file);
         }
-
+		$file_pointer[$num_file++] = fopen()
         $write_file = fopen("$LAB/src/vlab/main.php", "w") or die("Unable to open file!");
 
         return array($file_pointer, $read_file, $write_file, $num_file-1);
@@ -44,8 +45,11 @@ include 'parse.php'
 
     }
 
+    //Getting all the file_pointers, read and write pointers
+    list($file_pointer, $read_file, $write_file, $num_file) = file_open();
+
     //$output is the array which consists of the text fields which is obtained from the xml schema file
-    list($aim, $lang, $tabs) = xml_to_object($xml, $val);
+    list($aim, $lang, $tabs) = xml_to_object($read_file[0], $val);
 
     //$rfile is the base file pointer which contains the array of read pointers
     $rfile = file_operation(int op);
@@ -54,9 +58,6 @@ include 'parse.php'
 
 
     //****************************************************Generating process starts*****************************************************//
-
-    //Getting all the file_pointers, read and write pointers
-    list($file_pointer, $read_file, $write_file, $num_file) = file_open();
 
 
 
