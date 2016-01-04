@@ -13,13 +13,13 @@ include 'parse.php'
     function file_open(int op){
         $num_file = 1;
         foreach (glob("$LAB/src/files/*.*") as $file) {
-            $file_pointer[$num_file] = fopen($file, "r");
+            $file_pointer[$num_file++] = fopen($file, "r");
             //echo $rfile[$read];
         }
 
         $write_file = fopen("$LAB/src/vlab/main.php", "w") or die("Unable to open file!");
 
-        return array($file_pointer, $write_file);
+        return array($file_pointer, $read_file, $write_file, $num_file-1);
     }
 
   
@@ -36,7 +36,7 @@ include 'parse.php'
     //function to write text to a file pointer. The function is called
     //params: file_pointer, text variable, value
 
-    function loop_write($file, $txt, $num, $val){
+    function loop_write($file, $txt, $num){
 
         for ($x=1;$x<=$num;$x++){
             fwrite($file,$txt);
@@ -55,32 +55,31 @@ include 'parse.php'
 
     //****************************************************Generating process starts*****************************************************//
 
-    //Getting all the read and write pointers
-    $file_pointer = file_init();
-
-    file_open($file_pointer);
-
-
-    for($x=1;$x<=num;$x++){
-        loop_write($file, $txt, $num, $val);
-    }
+    //Getting all the file_pointers, read and write pointers
+    list($file_pointer, $read_file, $write_file, $num_file) = file_open();
 
 
 
-    //Tab generating,initializing and naming
-
-    //Note: $x starts from 1 because numbering for the tabs starts from 1
-
+   	fwrite($write_file, $read_file[$x++]);
+	fwrite(language);
+	fwrite($write_file, $read_file[$x++]);
+	loop_write($write_file, "<li><a href='#tab".$x. "' data-toggle='tab'>".$array."</a></li>", $number);
+	fwrite($write_file, $read_file[$x++]);
+	loopwrite(4);
+	fwrite($write_file, $read_file[$x++]);
+	loop_write($write_file, "<button type="button">". $val. "</button> Click to get a wedge<br><br>", 1);
+	fwrite($write_file, $read_file[$x++]);
+	fwrite(experiment_jpg);
+	fwrite($write_file, $read_file[$x++]);
 
 
     //Stich for getting the apparatus from the parser and making buttons for the user interface
     loop_write($file, $tab, $num, $val);
 
-    loop_write($wfile, "<li><a href='#tab".$x. "' data-toggle='tab'>".$array."</a></li>", $number);
-    loop_write($wfile, "<button type="button">". $val. "</button> Click to get a wedge<br><br>", 1);
+    //Stiching the number of buttons given by the xml file
 
     //Closing all the file pointers
-    fclose($num_files);
+    fclose($file_pointer);
 ?>
 
 

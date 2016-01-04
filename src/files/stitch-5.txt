@@ -1,62 +1,8 @@
-</div>
-                <ul class="pager wizard">
-                    <li class="previous first" style="display:none;"><a href="#"><?php translate('First', $lang) ?></a></li>
-                    <li class="previous"><a href="#"><?php translate('Previous', $lang) ?></a></li>
-                    <li class="next last" style="display:none;"><a href="#"><?php translate('Last', $lang) ?></a></li>
-                    <li class="next"><a href="#"><?php translate('Next', $lang) ?></a></li>
-                    <li class="finish"><a href=**><?php translate('Finish', $lang) ?></a></li>
-                </ul>
-            </div>
+       </form>
+
         </div>
-        <div class="col-xs-12">
-            <input type='text' name='stepid' id='stepid' value='1' size='2' style='width:20px;' />
-            <input type='button' class='btn' id='disable-step' value=<?php translate('disable', $lang) ?> />
-            <input type='button' class='btn' id='enable-step' value='<?php translate('enable', $lang) ?>' />
-            <input type='button' class='btn' id='enable-step' value='<?php translate('add', $lang) ?>' />
-            <input type='button' class='btn' id='remove-step' value='<?php translate('remove', $lang) ?>' />
-        </div>
-    </form>
 
-
-
-
-</section>
-</div>
-
-<!-- Example JavaScript files -->
-<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
-<script type="text/javascript" src="jquery-ui-1.8.custom.min.js"></script>
-
-<!-- Example jQuery code (JavaScript)  -->
-<script type="text/javascript" src="drag_drop.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script type="text/javascript" src="add_field.js"></script>
-<!--*****************************************************************************************************************************************-->
-<!--*****************************************************************************************************************************************-->
-<!--*****************************************************************************************************************************************-->
-
-
-
-
-
-<!--*****************************************************************************************************************************************-->
-<!--*****************************************************************************************************************************************-->
-<!--*****************************************************************************************************************************************-->
-
-
-<!--***********Script for the wizard options and the animations. Consists of the functions declared in the above html body****************-->
-<!--*****************************************************************************************************************************************-->
-<!--*****************************************************************************************************************************************-->
-<!--*****************************************************************************************************************************************-->
-
- <script src="http://code.jquery.com/jquery-latest.js"></script>
-  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
-  <script src="../bootstrap/js/bootstrap.min.js"></script>
-  <script src="../jquery.bootstrap.wizard.js"></script>
-<script src="../prettify.js"></script>
-<script src="wizard.js"></script>
-<!--*****************************************************************************************************************************************-->
-<!--*****************************************************************************************************************************************-->
-<!--*****************************************************************************************************************************************-->
-        </body>
-        </html>
+<div class="col-sm-3 col-md-3 col-lg-3">
+<form action= "process_apparatus.php" method="post" >
+<h4> Apparatus </h4>
+<ul class = "sizeDriller">

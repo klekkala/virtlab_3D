@@ -1,6 +1,12 @@
+                  </head>
+
+        <body>
+        <div class='container'>
+
+                <div class="page-header">
+ 
             <h1><?php translate('3D Physics virtual lab', $lang) ?> </h1>
 	<h5> <?php translate('You can design your experiments. Input the given details and generate your lab', $lang) ?></h2>
         </div>
-        <form id="commentForm" method="get" action="" class="form-horizontal">
             <div id="rootwizard">
-                <ul>    
+                <ul>   

@@ -1,0 +1,66 @@
+<br>
+
+<input type="button" value="Reset all" style="float: right;">&nbsp;&nbsp;
+&nbsp;<input type="button" value="Insert to database" style="float: right;">
+                    </div>
+                    </div>
+
+                    </div>
+
+<div class = "row">
+<div class = "col-sm-6 col-lg-6 col-md-6">
+                    <input type='text' name='stepid' id='stepid' value='1' size='2' style='width:20px;' />
+                    <input type='button' class='btn' id='disable-step' value=disable />
+                    <input type='button' class='btn' id='enable-step' value='enable' />
+                    <input type='button' class='btn' id='enable-step' value='add' />
+                    <input type='button' class='btn' id='remove-step' value='remove' />
+                </div>
+
+<div class = "col-sm-6 col-lg-6 col-md-6">
+                 <ul class="pager wizard">
+                            <li class="previous first" style="display:none;"><a href="#">First</a></li>
+                            <li class="previous"><a href="#">Previous</a></li>
+                            <li class="next last" style="display:none;"><a href="#">Last</a></li>
+                            <li class="next"><a href="#2">Next</a></li>
+                            <li class="finish"><a href=**>Finish</a></li>
+                        </ul>
+                        </div>
+        </div>
+        </div>
+        </div>
+        <!--*****************************************************************************************************************************************-->
+        <!--*****************************************************************************************************************************************-->
+        <!--*****************************************************************************************************************************************-->
+
+        <script>
+$('.apparatus').bind('click', function(){
+  var initial = $(this).val();
+      if(typeof $(this).data('counter') == "undefined"){
+          $(this).data('counter',1); 
+      }else{
+          $(this).data('counter',$(this).data('counter')+1);
+          initial = initial.substr(0,initial.indexOf('/'));
+      }
+     
+   $(this).val(initial+'/'+$(this).data('counter'));
+});
+
+</script>
+
+        <script type="text/javascript" src="jquery/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="jquery/jquery-ui-1.8.custom.min.js"></script>
+
+        <script src="jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="add_field.js"></script>
+
+        <!--***********Script for the wizard options and the animations. Consists of the functions declared in the above html body****************-->
+        <script src="jquery/jquery-latest.js"></script>
+        <script src="jquery/jquery.validate.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="jquery/jquery.bootstrap.wizard.js"></script>
+        <script src="prettify.js"></script>
+        <script src="wizard.js"></script>
+
+
+        </body>
+        </html>
