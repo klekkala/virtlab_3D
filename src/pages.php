@@ -49,33 +49,35 @@ include 'parse.php'
     list($file_pointer, $read_file, $write_file, $num_file) = file_open();
 
     //$output is the array which consists of the text fields which is obtained from the xml schema file
-    list($aim, $lang, $tabs) = xml_to_object($read_file[0], $val);
+    list($data, $apparatus, $tabs) = xml_to_object($read_file[0], $val);
 
     //$rfile is the base file pointer which contains the array of read pointers
     $rfile = file_operation(int op);
     //$number is the number of pages which will be present in the easyauthor framework wizard
-    $number = $tabs[0];
-
+    $lang = $data[$z++]
 
     //****************************************************Generating process starts*****************************************************//
 
 
 
-   	fwrite($write_file, $read_file[$x++]);
-	fwrite(language);
+   	fwrite($write_file, $read_file[$x++]."$lang".$read_file[$x++]);
+	
+	for ($y=1;$y<=$tabs[0];$y++){
+            fwrite($write_file, "<li><a href='#tab".$y. "' data-toggle='tab'>".$tabs[$y]."</a></li>");
+         }
+         
 	fwrite($write_file, $read_file[$x++]);
-	loop_write($write_file, "<li><a href='#tab".$x. "' data-toggle='tab'>".$array."</a></li>", $number);
-	fwrite($write_file, $read_file[$x++]);
-	loopwrite(4);
-	fwrite($write_file, $read_file[$x++]);
-	loop_write($write_file, "<button type="button">". $val. "</button> Click to get a wedge<br><br>", 1);
-	fwrite($write_file, $read_file[$x++]);
-	fwrite(experiment_jpg);
-	fwrite($write_file, $read_file[$x++]);
+	loopwrite($write_file, $read_file[$x++]);
+	fwrite($write_file, $read_file[$x++];
+	
+	for ($y=1;$y<=$apparatus[0];$y++){
+            fwrite($write_file, "<button type='button'>". $apparatus[$y]. "</button> Click to get a".$apparatus[$y]."<br><br>");
+        }
+        
+	fwrite($write_file, $read_file[$x++]."<img src=".$data[$z++]." alt='Finding g' style='width:600px;height:350px;'>".$read_file[$x++]);
 
 
     //Stich for getting the apparatus from the parser and making buttons for the user interface
-    loop_write($file, $tab, $num, $val);
 
     //Stiching the number of buttons given by the xml file
 
