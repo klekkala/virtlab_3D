@@ -60,11 +60,11 @@ function xml_to_object($xml, $val) {
                 }
             }
             else if($tag['tag'] == 'aim' || $tag['tag'] == 'src'){
-                array_push($meta_data,$tag['value']);
+                array_push($data,$tag['value']);
 
             }
         }
 
-        return array($aim, $lang, $tabs);
+        return array($data, $apparatus, $tabs);
     }
 ?>
