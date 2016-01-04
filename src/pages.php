@@ -10,20 +10,19 @@ include 'parse.php'
     //Function: To execute various file_operations which are required by this program
     //Params: file_operation; 0 -> opening; 1 -> reading; 2 -> closing;
     //Return: Number of files opened
-    function file_operation(int op){
-        $num_file = 0;
+    function file_open(int op){
+        $num_file = 1;
         foreach (glob("$LAB/src/files/*.*") as $file) {
-            $file_handle = fopen($file, "r");
-            $rfile[$read++] = fread($file_handle);
-
-            echo $rfile[$read];
+            $file_pointer[$num_file] = fopen($file, "r");
+            //echo $rfile[$read];
         }
 
         $write_file = fopen("$LAB/src/vlab/main.php", "w") or die("Unable to open file!");
-        $wfile[$num_file++] = fread($write_file);
 
-        return $rfile;
+        return array($file_pointer, $write_file);
     }
+
+  
 
     //Function: To close all the file pointers which are opened by the previous function
 
@@ -57,7 +56,11 @@ include 'parse.php'
     //****************************************************Generating process starts*****************************************************//
 
     //Getting all the read and write pointers
-    $file_pointer = file_operation();
+    $file_pointer = file_init();
+
+    file_open($file_pointer);
+
+
     for($x=1;$x<=num;$x++){
         loop_write($file, $txt, $num, $val);
     }
