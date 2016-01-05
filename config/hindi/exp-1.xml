@@ -1,64 +1,75 @@
 <experiment-1>
 
-    <aim>To find the downward force, along an inclined plane, acting on a roller
-        due to gravity and study its relationship with the angle of inclination
-        by plotting graph between force and sin θ</aim>
+    <aim>क रोलर पर अभिनय के लिए विमान के साथ , नीचे बल लगाने के लिए
+        गुरुत्वाकर्षण के लिए और झुकाव का कोण के साथ अपने संबंधों का अध्ययन कारण
+        बल और पाप θ के बीच ग्राफ साजिश रचने के द्वारा.</aim>
 
-    <num>5</num>
+    <language>hi</language>
+
+    <num_steps>5</num_steps>
+
     <steps>
-        <step>Finding out g</step>
+        <step>खोजना g</step>
 
-        <step>Tension in pulley</step>
+        <step>चरखी में तनाव</step>
 
-        <step>ATwood machine</step>
+        <step>एटवुड मशीन</step>
 
         <step>Moving wedge</step>
 
-        <step>Free fall</step>
-
-
+        <step>चल रहा है कील</step>
     </steps>
 
+    <num_app>4</num_app>
+
     <apparatus>
-        <block>
-            <number>4</number>
-        </block>
+        <graphics>
+            <block>
+                <number>4</number>
+            </block>
 
-        <wedge>
-            <number>4</number>
-        </wedge>
+            <wedge>
+                <number>4</number>
+            </wedge>
 
-        <thread>
-            <number>4</number>
-        </thread>
+            <thread>
+                <number>4</number>
 
-        <pulley>
-            <number>4</number>
-        </pulley>
+            </thread>
+
+            <pulley>
+                <number>4</number>
+            </pulley>
+        </graphics>
+
     </apparatus>
 
-<types>
-<dropdown></dropdown>
-<slider></slider>
-<radio></radio>
-<button></button>
-</types>
 
-
+    <animation>
+        <src>"experiment1.jpg"</src>
+    </animation>
 
 
     <variables>
         <block>
-<mass></mass>
-    </block>
-    <thread>
-        <tension></tension>
-    </thread>
-
-    <pulley>
-
-</pulley>
-
+            <from>1</from>
+            <to>5</to>
+            <units>KG</units>
+            <tool>slider</tool>
+        </block>
     </variables>
-    <src>file.txt</src>
+
+
+    <evaluation>
+        <error>30</error>
+        <message>Wrong answer! Please check your answer</message>
+    </evaluation>
+
+
+    <conclusion>After doing this experiment, the student will know how to calculate the acceleration due to gravity and will be able to undrestand the concept behind dynamics.</conclusion>
+
+
+    <theory>
+        <src>$LAB/config/exp-1.pdf</src>
+    </theory>
 </experiment-1>

@@ -24,7 +24,7 @@ canvas:active {
 }
 </style>
 <?php $lang=
-en;?>
+hi;?>
                   </head>
 
         <body>
@@ -34,10 +34,12 @@ en;?>
  
              <h1>3D Physics virtual lab </h1>
             <h3> You can design your experiments. Input the given details and generate your lab</h3>
-            <h4> Aim of the experiment:To find the elasticity of the spring and to calcualte the total kinetic energy of the spring and the potential energy of the block hanging to the spring. Also to verify the conversation of energy.</h4>
+            <h4> Aim of the experiment:क रोलर पर अभिनय के लिए विमान के साथ , नीचे बल लगाने के लिए
+        गुरुत्वाकर्षण के लिए और झुकाव का कोण के साथ अपने संबंधों का अध्ययन कारण
+        बल और पाप θ के बीच ग्राफ साजिश रचने के द्वारा.</h4>
                 </div>
                     <div id='rootwizard'>
-                        <ul><li><a href='#tab1' data-toggle='tab'>Calculate the elasticity</a></li><li><a href='#tab2' data-toggle='tab'>Kinetic energy of the spring</a></li><li><a href='#tab3' data-toggle='tab'>Potential energy of the block</a></li><li><a href='#tab4' data-toggle='tab'>Conservation of energy</a></li>        </div>
+                        <ul><li><a href='#tab1' data-toggle='tab'>खोजना g</a></li><li><a href='#tab2' data-toggle='tab'>चरखी में तनाव</a></li><li><a href='#tab3' data-toggle='tab'>एटवुड मशीन</a></li><li><a href='#tab4' data-toggle='tab'>चरखी में तनाव</a></li><li><a href='#tab5' data-toggle='tab'>चल रहा है कील</a></li>        </div>
             <div id="rootwizard">
                 <ul>   
 </ul>
@@ -97,7 +99,7 @@ en;?>
 <div class="col-sm-3 col-md-3 col-lg-3">
 <form action= "process_apparatus.php" method="post" >
 <h4> Apparatus </h4>
-<ul class = "sizeDriller"><button type='button'>block</button> Click to get a block<br><br><button type='button'>spring</button> Click to get a spring<br><br><button type='button'>stand</button> Click to get a stand<br><br></ul>
+<ul class = "sizeDriller"><button type='button'>block</button> Click to get a block<br><br><button type='button'>wedge</button> Click to get a wedge<br><br><button type='button'>thread</button> Click to get a thread<br><br><button type='button'>pulley</button> Click to get a pulley<br><br></ul>
 
 </form>
 
@@ -105,7 +107,7 @@ en;?>
         <div class="col-sm-6 col-lg-6 col-md-6"> 
        <!-- <script src="matter.js"></script>
        <script src ="inclined.js"></script>-->
-        <!--<script src="animation.js"></script> --><img src="experiment2.jpg" alt='Finding g' style='width:600px;height:350px;'><br>
+        <!--<script src="animation.js"></script> --><img src="experiment1.jpg" alt='Finding g' style='width:600px;height:350px;'><br>
 
 <input type="button" value="Reset all" style="float: right;">&nbsp;&nbsp;
 &nbsp;<input type="button" value="Insert to database" style="float: right;">

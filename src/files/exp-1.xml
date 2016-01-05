@@ -1,26 +1,26 @@
 <experiment-1>
 
-    <aim>To find the downward force, along an inclined plane, acting on a roller
-        due to gravity and study its relationship with the angle of inclination
-        by plotting graph between force and sin θ.</aim>
+    <aim>क रोलर पर अभिनय के लिए विमान के साथ , नीचे बल लगाने के लिए
+        गुरुत्वाकर्षण के लिए और झुकाव का कोण के साथ अपने संबंधों का अध्ययन कारण
+        बल और पाप θ के बीच ग्राफ साजिश रचने के द्वारा.</aim>
 
-    <language>en</language>
+    <language>hi</language>
 
     <num_steps>5</num_steps>
 
     <steps>
-        <step>Finding out g</step>
+        <step>खोजना g</step>
 
-        <step>Tension in pulley</step>
+        <step>चरखी में तनाव</step>
 
-        <step>ATwood machine</step>
+        <step>एटवुड मशीन</step>
 
-        <step>Moving wedge</step>
+        <step>चरखी में तनाव</step>
 
-        <step>Free fall</step>
+        <step>चल रहा है कील</step>
     </steps>
 
-    <num_app>5</num_app>
+    <num_app>4</num_app>
 
     <apparatus>
         <graphics>
@@ -46,7 +46,7 @@
 
 
     <animation>
-        <src>incline.js</src>
+        <src>"experiment1.jpg"</src>
     </animation>
 
 
