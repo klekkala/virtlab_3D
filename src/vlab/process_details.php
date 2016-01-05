@@ -41,5 +41,6 @@ if ($_SERVER["REQUEST_METHOD"]== "POST"){
     }
 
     mysqli_close($conn);
+    header("Location: http://localhost/src/vlab//main.php");
 }
 ?>

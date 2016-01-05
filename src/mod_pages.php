@@ -1,10 +1,10 @@
 <?php
 
- $wfile = fopen("/var/www/html/src/vlab/main.php", "w") or die("Unable to open file!");
-
-foreach (glob("/var/www/html/src/files/*.*") as $file) {
-    foreach(file($file) as $line) {
-        fwrite($wfile, $line);
-    }
+$x=0;
+$file_arr = array();
+$dir = "/var/www/html/src/files/*";
+foreach(glob($dir) as $file) {
+    $file_arr[$x++] = nl2br(file_get_contents($file));
 }
+echo $file_arr[1];
 ?>

@@ -61,7 +61,7 @@ function xml_to_object($xml, $val) {
 
             }
 
-            else if($tag['tag']=='language' || $tag['tag']=='src'){
+            else if($tag['tag']=='language' || $tag['tag']=='aim' || $tag['tag']=='src'){
                 array_push($data,$tag['value']);
             }
 

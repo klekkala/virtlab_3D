@@ -32,11 +32,15 @@ en;?>
 
                 <div class="page-header">
  
-            <h1>3D Physics virtual lab</h1>
-	<h5>You can design your experiments. Input the given details and generate your lab</h2>
-        </div>
+             <h1>3D Physics virtual lab </h1>
+            <h3> You can design your experiments. Input the given details and generate your lab</h3>
+            <h4> Aim of the experiment:To find the elasticity of the spring and to calcualte the total kinetic energy of the spring and the potential energy of the block hanging to the spring. Also to verify the conversation of energy.</h4>
+                </div>
+                    <div id='rootwizard'>
+                        <ul><li><a href='#tab1' data-toggle='tab'>Calculate the elasticity</a></li><li><a href='#tab2' data-toggle='tab'>Kinetic energy of the spring</a></li><li><a href='#tab3' data-toggle='tab'>Potential energy of the block</a></li><li><a href='#tab4' data-toggle='tab'>Conservation of energy</a></li>        </div>
             <div id="rootwizard">
-                <ul>   <li><a href='#tab1' data-toggle='tab'>Finding out g</a></li><li><a href='#tab2' data-toggle='tab'>Tension in pulley</a></li><li><a href='#tab3' data-toggle='tab'>ATwood machine</a></li><li><a href='#tab4' data-toggle='tab'>Moving wedge</a></li><li><a href='#tab5' data-toggle='tab'>Free fall</a></li></ul>
+                <ul>   
+</ul>
                         <div id="bar" class="progress progress-info progress-striped">
                             <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
                         </div>
@@ -93,7 +97,7 @@ en;?>
 <div class="col-sm-3 col-md-3 col-lg-3">
 <form action= "process_apparatus.php" method="post" >
 <h4> Apparatus </h4>
-<ul class = "sizeDriller"><button type='button'>block</button> Click to get a block<br><br><button type='button'>wedge</button> Click to get a wedge<br><br><button type='button'>thread</button> Click to get a thread<br><br><button type='button'>pulley</button> Click to get a pulley<br><br></ul>
+<ul class = "sizeDriller"><button type='button'>block</button> Click to get a block<br><br><button type='button'>spring</button> Click to get a spring<br><br><button type='button'>stand</button> Click to get a stand<br><br></ul>
 
 </form>
 
@@ -101,7 +105,7 @@ en;?>
         <div class="col-sm-6 col-lg-6 col-md-6"> 
        <!-- <script src="matter.js"></script>
        <script src ="inclined.js"></script>-->
-        <!--<script src="animation.js"></script> --><img src=incline.js alt='Finding g' style='width:600px;height:350px;'><br>
+        <!--<script src="animation.js"></script> --><img src="experiment2.jpg" alt='Finding g' style='width:600px;height:350px;'><br>
 
 <input type="button" value="Reset all" style="float: right;">&nbsp;&nbsp;
 &nbsp;<input type="button" value="Insert to database" style="float: right;">
