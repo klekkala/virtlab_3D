@@ -1,3 +1,4 @@
+;?>
                   </head>
 
         <body>
@@ -5,8 +6,8 @@
 
                 <div class="page-header">
  
-            <h1><?php translate('3D Physics virtual lab', $lang) ?> </h1>
-	<h5> <?php translate('You can design your experiments. Input the given details and generate your lab', $lang) ?></h2>
+            <h1>3D Physics virtual lab</h1>
+	<h5>You can design your experiments. Input the given details and generate your lab</h2>
         </div>
             <div id="rootwizard">
                 <ul>   

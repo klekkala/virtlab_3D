@@ -1,3 +1,4 @@
+<form  method="post" action= "process_details.php">
 <div class="tab-pane" id="tab1">
                                       <div class="control-group">
                                             <label class="control-label" for="step">step</label>
@@ -39,3 +40,4 @@
         <input type="submit" class="button" name="insert" value="insert" />
 
                             </div>
+                              </form>

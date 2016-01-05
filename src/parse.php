@@ -5,6 +5,14 @@ Description: XML parser used for parsing XML file
 Date: 1 November 2015
 */
 
+
+
+function debug_array($input_array){
+
+    for($x=0;$x<=sizeof($input_array);$x++){
+        echo $input_array[$x];
+    }
+}
 //**********************************************XML parser********************************************
 //This XML parser works by pushing the retrieved nodes into a stack and later retrieving them//
 class XmlElement {
@@ -24,7 +32,7 @@ function xml_to_object($xml, $val) {
 
     $steps = array();
     $apparatus =  array ();
-    $meta_data = array();
+    $data = array();
 
 
 
@@ -40,31 +48,33 @@ function xml_to_object($xml, $val) {
 
     foreach ($tags as $tag) {
 
-        if ($tag['type'] == "complete" || $tag['type'] == "open"){
+ 
             if($tag['tag']=='step' || $tag['tag']=='num_steps'){
-                array_push($tabs,$tag['value']);
+                array_push($steps,$tag['value']);
 
             }
-            else  if($tag['tag']=='num_app'){
+            else if($tag['tag']=='num_app'){
 
                 array_push($apparatus,$tag['value']);
-                $check = $tag['value'];
+                //$check = $tag['value'];
+                //echo $tag['tag'];
 
             }
 
-            else if(check != 0){
-                array_push($apparatus,$tag['tag']);
-                $counter+=1;
-                if($counter==$check){
-                    $check = 0;
-                }
-            }
-            else if($tag['tag'] == 'aim' || $tag['tag'] == 'src'){
+            else if($tag['tag']=='language' || $tag['tag']=='src'){
                 array_push($data,$tag['value']);
+            }
 
+         if($tag['type'] == "open"){
+            //echo $tag['tag'];
+            if($tag['level']==4){
+                array_push($apparatus,$tag['tag']);
             }
         }
-
-        return array($data, $apparatus, $tabs);
     }
+
+    //debug_array($steps);
+    return array($data, $apparatus, $steps);
+}
+
 ?>

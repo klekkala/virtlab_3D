@@ -1,8 +1,6 @@
 <?php
-$requestMethod = isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD'] : null;
+if ($_SERVER["REQUEST_METHOD"]== "POST"){
 
-if ($requestMethod == 'post') {
-// Post request
 
     $servername = "localhost";
     $username = "root";
@@ -23,7 +21,7 @@ if ($requestMethod == 'post') {
     $desc = $_REQUEST['descfield'];
     $outcome = $_REQUEST['outcomefield'];
     $action = $_REQUEST['actionfield'];
-    $step = $_REQUEST['step_number']
+    $step = 1;
 
 
     $sql = "INSERT INTO step(name,description,action,outcome) VALUES('$name','$desc','$action','$outcome')";
